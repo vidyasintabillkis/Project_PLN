@@ -9,10 +9,12 @@ use CodeIgniter\HTTP\ResponseInterface;
 class UpController extends BaseController
 {
     public $up;
+    public $validation;
 
     public function __construct()
     {
         $this->up = new UpModel();
+        $this->validation = \Config\Services::validation();
     }
 
     public function index()
@@ -25,59 +27,98 @@ class UpController extends BaseController
         return view('up2d/up', $data);
     }
 
-    // public function tambah_up()
-    // {
+    public function tambah_up()
+    {
 
-    //     $data = [
-    //         'title' => 'Tambah Data Unit Pelaksana (UP)',
-    //     ];
+        $data = [
+            'title' => 'Tambah Data Unit Pelaksana (UP)',
+        ];
 
-    //     return view('admin/tambah_unit', $data);
-    // }
+        return view('up2d/tambah_up', $data);
+    }
 
-    // public function store()
-    // {
-    //     $this->up->saveUP([
-    //         'nama_up' => $this->request->getVar('nama_up'),
-    //     ]);
+    public function simpan_up()
+    {
 
-    //     return redirect()->to(base_url('/up2d/admin'));
-    // }
+        $rules = [
+            'nama_up' => 'required|is_unique[data_up.nama_up]',
+        ];
 
-    // public function edit($id)
-    // {
-    //     $nama_up = $this->up->getUP($id);
+        // Set custom validation messages
+        $messages = [
+            'nama_up' => [
+                'is_unique' => 'The name already exists. Please choose a different name.',
+            ],
+        ];
 
-    //     $data = [
-    //         'title' => 'Ubah Data Unit Pelayanan (UP)',
-    //         'nama_up' => $nama_up,
-    //     ];
+        $this->validation->setRules($rules, $messages);
 
-    //     return view('admin/edit_unit', $data);
-    // }
+        if ($this->validation->withRequest($this->request)->run()) {
+            // Validation passed
+            $data = [
+                'nama_up' => $this->request->getVar('nama_up'),
+            ];
 
-    // public function update($id)
-    // {
+            $success = $this->up->saveUP($data);
 
-    //     $data = [
-    //         'nama_up' => $this->request->getVar('nama_up')
-    //     ];
+            if ($success) {
+                session()->setFlashdata('message', 'Ditambahkan');
+                return redirect()->to(base_url('admin/up'));
+            }
+        } else {
+            // Validation failed
+            $errors = $this->validation->getErrors();
+            session()->setFlashdata('error', $errors);
+            return redirect()->to(previous_url());
+        }
+    }
 
-    //     $result = $this->up->updateLokasi($data, $id);
+    public function edit($id)
+    {
+        $nama_up = $this->up->getUP($id);
 
-    //     if (!$result) {
-    //         return redirect()->back()->withInput()
-    //             ->with('error', 'Gagal menyimpan data');
-    //     }
+        $data = [
+            'title' => 'Ubah Data Unit Pelayanan (UP)',
+            'nama_up' => $nama_up,
+        ];
 
-    //     return redirect()->to(base_url('/admin/unit'));
-    // }
+        return view('up2d/edit_up', $data);
+    }
 
+    public function update($id)
+    {
 
-    // public function hapus($id)
-    // {
-    //     $this->up->deleteUP($id);
+        $newName = $this->request->getVar('nama_up');
 
-    //     return redirect('up2d/unit')->with('Berhasil', 'Data Berhasil Dihapus');
-    // }
+        // Check if the new name is unique excluding the current record
+        $isUnique = $this->up->isUniqueName($newName, $id);
+
+        if (!$isUnique) {
+            // If not unique, show an error message and redirect back
+            session()->setFlashdata('error', ['nama_up' => 'The name already exists. Please choose a different name.']);
+            return redirect()->to(previous_url());
+        }
+
+        // Validation passed, update the record
+        $data = [
+            'nama_up' => $newName,
+        ];
+
+        $success = $this->up->updateUP($data, $id);
+
+        if ($success) {
+            session()->setFlashdata('message', 'Diubah');
+            return redirect()->to(base_url('admin/up'));
+        }
+    }
+
+    public function hapus($id)
+    {
+        $success = $this->up->deleteUP($id);
+
+        if ($success) {
+            session()->setFlashdata('message', 'Dihapus');
+            return redirect()->to(base_url('admin/up'));
+        }
+    }
 }

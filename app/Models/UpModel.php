@@ -15,30 +15,44 @@ class UpModel extends Model
     protected $allowedFields    = ['nama_up'];
 
     // Dates
-    protected $useTimestamps = true;
-    protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
+    // protected $useTimestamps = true;
+    // protected $dateFormat    = 'datetime';
+    // protected $createdField  = 'created_at';
+    // protected $updatedField  = 'updated_at';
+    // protected $deletedField  = 'deleted_at';
 
-    public function saveUP($data){
-        $this->insert($data); 
+    protected $skipValidation = true;
+
+    public function saveUP($data)
+    {
+        return $this->insert($data);
     }
 
-    public function getUP($id = null){
-        if($id != null){
-            return $this->select('data_up.*')->find($id); 
+    public function getUP($id = null)
+    {
+        if ($id != null) {
+            return $this->select('data_up.*')->find($id);
         }
-        
+
         return $this->select('data_up.*')->findAll();
     }
 
-    public function updateUP($data, $id){
-        return $this->update($id, $data); 
+    public function updateUP($data, $id)
+    {
+        return $this->update($id, $data);
     }
 
-    public function deleteUP($id){
+    public function deleteUP($id)
+    {
         return $this->delete($id);
+    }
+
+    public function isUniqueName($name, $id)
+    {
+        return $this->db->table('data_up')
+            ->where('nama_up', $name)
+            ->where('id_up !=', $id)
+            ->countAllResults() === 0;
     }
 
     // // Validation

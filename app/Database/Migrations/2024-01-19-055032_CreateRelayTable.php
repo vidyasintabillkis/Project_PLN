@@ -34,6 +34,10 @@ class CreateRelayTable extends Migration
                 'constraint'        => 2,
                 'null'              => true,
             ],
+            'urutan_keypoint' => [ 
+                'type'              => 'VARCHAR', 
+                'constraint'        => 20,
+            ],
             'nama_keypoint' => [ 
                 'type'              => 'VARCHAR', 
                 'constraint'        => 35,

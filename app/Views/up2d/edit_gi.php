@@ -85,9 +85,9 @@
         <section id="tambah" class="tambah section-bg"><br>
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-req">Tambah Data Unit Pelaksana (UP)</h6>
+                    <h6 class="m-0 font-weight-bold text-req">Ubah Data Gardu Induk (GI)</h6>
                 </div>
-                <form method="POST" action="<?= base_url('admin/up/' . $nama_up['id_up'] . '/edit') ?>" enctype="multipart/form-data">
+                <form method="POST" action="<?= base_url('admin/gi/' . $gi['id_gardu_induk'] . '/edit') ?>" enctype="multipart/form-data">
                     <input type="hidden" name="_method" value="PUT">
                     <?= csrf_field() ?>
                     <div class="card-body">
@@ -102,12 +102,12 @@
                         </div> -->
                         <div class="mb-3">
                             <div class="col">
-                                <label for="small mb-1" for="up">Nama Unit Pelaksana (UP)</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Nama UP" name="nama_up" value="<?= $nama_up['nama_up'] ?>" required>
+                                <label for="small mb-1" for="up">Gardu Induk (GI)</label>
+                                <input type="text" class="form-control" placeholder="Masukkan Nama GI" name="nama_gardu_induk" value="<?= $gi['nama_gardu_induk'] ?>" required>
                             </div>
                         </div>
                         <div class="d-flex justify-content-end mt-4">
-                            <a href="<?= base_url("admin/up") ?>" type="button" class="btn btn-warning btn-sm" style="margin-right: 10px; color:#ffff; ">Kembali</a>
+                            <a href="<?= base_url("admin/gi") ?>" type="button" class="btn btn-warning btn-sm" style="margin-right: 10px; color:#ffff; ">Kembali</a>
                             <button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary btn-sm">Simpan</button>
                         </div>
                     </div>

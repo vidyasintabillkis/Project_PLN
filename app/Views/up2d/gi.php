@@ -30,6 +30,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0-alpha3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.1/css/responsive.bootstrap5.min.css">
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="<?= base_url("assets/vendor/sweetalert/sweetalert2.css") ?>" rel="stylesheet">
     <link href="<?= base_url("assets/css/data_up1.css") ?>" rel="stylesheet">
     <link href="<?= base_url("assets/css/data_up2.css") ?>" rel="stylesheet">
 
@@ -80,38 +82,46 @@
 
 
     <main id="main">
-
+        <div class="swal" data-swal="<?= session()->get('message'); ?>"></div>
         <!-- ======= Why Us Section ======= -->
-        <section id="tambah" class="tambah section-bg"><br>
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-req">Tambah Data Unit Pelaksana (UP)</h6>
+        <section id="unit" class="unit section-bg"><br>
+            <div class="container p-3 my-5">
+                <!-- DataTable Code starts -->
+                <div class="text-right">
+                    <a href="<?= base_url("admin/tambah gi") ?>" class="btn btn-req border-dark" style="margin-bottom: 20px;">Tambah Data</a>
                 </div>
-                <form method="POST" action="<?= base_url('admin/up/' . $nama_up['id_up'] . '/edit') ?>" enctype="multipart/form-data">
-                    <input type="hidden" name="_method" value="PUT">
-                    <?= csrf_field() ?>
-                    <div class="card-body">
-                        <!-- <div class="mb-3">
-                            <label class="small mb-1" for="unit">Unit</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>pilih nama unit</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div> -->
-                        <div class="mb-3">
-                            <div class="col">
-                                <label for="small mb-1" for="up">Nama Unit Pelaksana (UP)</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Nama UP" name="nama_up" value="<?= $nama_up['nama_up'] ?>" required>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-end mt-4">
-                            <a href="<?= base_url("admin/up") ?>" type="button" class="btn btn-warning btn-sm" style="margin-right: 10px; color:#ffff; ">Kembali</a>
-                            <button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary btn-sm">Simpan</button>
-                        </div>
-                    </div>
-                </form>
+                <table id="example" class="table" style="width:100%; margin-top: 20px;">
+                    <thead>
+                        <tr>
+                            <th class="table-info">No</th>
+                            <th class="table-info">Nama Gardu Induk (GI)</th>
+                            <th class="table-info">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $i = 1;
+                        foreach ($gi as $gi) {
+                        ?>
+                            <tr>
+                                <td><?= $i++ ?></td>
+                                <td><?= $gi['nama_gardu_induk'] ?></td>
+                                <td class="d-flex justify-content">
+                                    <a href="<?= base_url('admin/gi/' . $gi['id_gardu_induk'] . '/edit') ?>" type="button" class="btn btn-warning btn-sm mr-2" style="margin-right: 10px; color:#ffff; ">
+                                        Ubah
+                                    </a>
+                                    <form action="<?= base_url('admin/gi/' . $gi['id_gardu_induk']) ?>" method="POST">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <?= csrf_field() ?>
+                                        <button type="submit" class="btn btn-danger btn-sm btn-hapus">Hapus</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
             </div>
         </section>
         <!-- End Why Us Section -->
@@ -140,10 +150,16 @@
     <script src="<?= base_url("assets/vendor/php-email-form/validate.js") ?>"></script>
     <script src="<?= base_url("assets/vendor/sweetalert/sweetalert2.all.js") ?>"></script>
 
+    <!-- DataTable JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.4.1/js/responsive.bootstrap5.min.js"></script>
+
     <!-- Template Main JS File -->
     <script src="<?= base_url("assets/js/main.js") ?>"></script>
     <script src="<?= base_url("assets/js/script.js") ?>"></script>
-    <script src="<?= base_url("assets/js/tab.js") ?>"></script>
 </body>
 
 </html>

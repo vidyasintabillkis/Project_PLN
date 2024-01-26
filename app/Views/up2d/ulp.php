@@ -88,29 +88,31 @@
             <div class="container p-3 my-5">
                 <!-- DataTable Code starts -->
                 <div class="text-right">
-                    <a href="<?= base_url("admin/tambah up") ?>" class="btn btn-req border-dark" style="margin-bottom: 20px;">Tambah Data</a>
+                    <a href="<?= base_url("admin/tambah ulp") ?>" class="btn btn-req border-dark" style="margin-bottom: 20px;">Tambah Data</a>
                 </div>
                 <table id="example" class="table" style="width:100%; margin-top: 20px;">
                     <thead>
                         <tr>
                             <th class="table-info">No</th>
                             <th class="table-info">Nama Unit Pelaksana (UP)</th>
+                            <th class="table-info">Nama Unit Layanan Pelanggan (ULP)</th>
                             <th class="table-info">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         $i = 1;
-                        foreach ($nama_up as $up) {
+                        foreach ($ulp as $ulp) {
                         ?>
                             <tr>
                                 <td><?= $i++ ?></td>
-                                <td><?= $up['nama_up'] ?></td>
+                                <td><?= $ulp['nama_up'] ?></td>
+                                <td><?= $ulp['nama_ulp'] ?></td>
                                 <td class="d-flex justify-content">
-                                    <a href="<?= base_url('admin/up/' . $up['id_up'] . '/edit') ?>" type="button" class="btn btn-warning btn-sm mr-2" style="margin-right: 10px; color:#ffff; ">
+                                    <a href="<?= base_url('admin/ulp/' . $ulp['id_ulp'] . '/edit') ?>" type="button" class="btn btn-warning btn-sm mr-2" style="margin-right: 10px; color:#ffff; ">
                                         Ubah
                                     </a>
-                                    <form action="<?= base_url('admin/up/' . $up['id_up']) ?>" method="POST">
+                                    <form action="<?= base_url('admin/ulp/' . $ulp['id_ulp']) ?>" method="POST">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <?= csrf_field() ?>
                                         <button type="submit" class="btn btn-danger btn-sm btn-hapus">Hapus</button>

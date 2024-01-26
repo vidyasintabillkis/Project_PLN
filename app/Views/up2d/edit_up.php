@@ -80,7 +80,7 @@
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-req">Tambah Data Unit Pelaksana (UP)</h6>
                 </div>
-                <form method="POST" action="<?= base_url('/admin/' . $nama_up['id_up'] . '/edit') ?>" enctype="multipart/form-data">
+                <form method="POST" action="<?= base_url('admin/up/' . $nama_up['id_up'] . '/edit') ?>" enctype="multipart/form-data">
                     <input type="hidden" name="_method" value="PUT">
                     <?= csrf_field() ?>
                     <div class="card-body">

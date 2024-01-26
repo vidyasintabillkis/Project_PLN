@@ -55,12 +55,19 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto" href="#">Cari</a></li>
-                    <li class="dropdown"><a href="#"><span>Data</span> <i class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a href="#"><span>Jenis Setting Proteksi</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li><a href="#">Drop Down 2</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
+                            <li><a href="#">OCR</a></li>
+                            <li><a href="#">GFR</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href=""><span>Data</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="<?= base_url("/admin/up")?>">Data UP</a></li>
+                            <li><a href="<?= base_url("/admin/ulp")?>">Data ULP</a></li>
+                            <li><a href="#">Data GI</a></li>
+                            <li><a href="#">Data Penyulang</a></li>
+                            <li><a href="#">Data Relay</a></li>
                         </ul>
                     </li>
                     <li><a class="getstarted scrollto" href="#about">Keluar</a></li>
@@ -94,7 +101,7 @@
                         </div> -->
                         <div class="mb-3">
                             <div class="col">
-                                <label for="small mb-1" for="up">Nama Unit Pelaksana (UP)</label>
+                                <label for="small mb-1" for="up">Unit Pelaksana (UP)</label>
                                 <input type="text" class="form-control" placeholder="Masukkan Nama UP" name="nama_up" required>
                             </div>
                         </div>

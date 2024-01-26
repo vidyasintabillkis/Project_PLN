@@ -65,7 +65,7 @@
                         <ul>
                             <li><a href="<?= base_url("/admin/up")?>">Data UP</a></li>
                             <li><a href="<?= base_url("/admin/ulp")?>">Data ULP</a></li>
-                            <li><a href="#">Data GI</a></li>
+                            <li><a href="<?= base_url("/admin/gi")?>">Data GI</a></li>
                             <li><a href="#">Data Penyulang</a></li>
                             <li><a href="#">Data Relay</a></li>
                         </ul>

@@ -3,6 +3,7 @@
 use CodeIgniter\Router\RouteCollection;
 use App\Controllers\UpController;
 use App\Controllers\UlpController;
+use App\Controllers\GiController;
 
 /**
  * @var RouteCollection $routes
@@ -23,3 +24,11 @@ $routes->post('/admin/simpan ulp', 'UlpController::simpan_ulp');
 $routes->get('admin/ulp/(:any)/edit', [UlpController::class, 'edit']);
 $routes->put('admin/ulp/(:any)', [UlpController::class, 'update']);
 $routes->delete('admin/ulp/(:any)', [UlpController::class, 'hapus']);
+
+//DATA GI
+$routes->get('/admin/gi', 'GiController::index');
+$routes->get('/admin/tambah gi', 'GiController::tambah_gi');
+$routes->post('/admin/simpan gi', 'GiController::simpan_gi');
+$routes->get('admin/gi/(:any)/edit', [GiController::class, 'edit']);
+$routes->put('admin/gi/(:any)', [GiController::class, 'update']);
+$routes->delete('admin/gi/(:any)', [GiController::class, 'hapus']);

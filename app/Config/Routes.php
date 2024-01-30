@@ -4,6 +4,7 @@ use CodeIgniter\Router\RouteCollection;
 use App\Controllers\UpController;
 use App\Controllers\UlpController;
 use App\Controllers\GiController;
+use App\Controllers\PenyulangController;
 
 /**
  * @var RouteCollection $routes
@@ -32,3 +33,12 @@ $routes->post('/admin/simpan gi', 'GiController::simpan_gi');
 $routes->get('admin/gi/(:any)/edit', [GiController::class, 'edit']);
 $routes->put('admin/gi/(:any)', [GiController::class, 'update']);
 $routes->delete('admin/gi/(:any)', [GiController::class, 'hapus']);
+
+//DATA Penyulang 
+$routes->get('/admin/penyulang', 'PenyulangController::index');
+$routes->get('/admin/tambah penyulang', 'PenyulangController::tambah');
+$routes->post('/admin/simpan penyulang', 'PenyulangController::simpan');
+$routes->get('admin/penyulang/(:any)/edit', [PenyulangController::class, 'edit']);
+$routes->put('admin/penyulang/(:any)', [PenyulangController::class, 'update']);
+$routes->delete('admin/penyulang/(:any)', [PenyulangController::class, 'hapus']);
+

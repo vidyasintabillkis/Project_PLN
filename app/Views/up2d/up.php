@@ -68,7 +68,7 @@
                             <li><a href="<?= base_url("/admin/up")?>">Data UP</a></li>
                             <li><a href="<?= base_url("/admin/ulp")?>">Data ULP</a></li>
                             <li><a href="<?= base_url("/admin/gi")?>">Data GI</a></li>
-                            <li><a href="#">Data Penyulang</a></li>
+                            <li><a href="<?= base_url("/admin/penyulang")?>">Data Penyulang</a></li>
                             <li><a href="#">Data Relay</a></li>
                         </ul>
                     </li>
@@ -94,7 +94,7 @@
                     <thead>
                         <tr>
                             <th class="table-info">No</th>
-                            <th class="table-info">Nama Unit Pelaksana (UP)</th>
+                            <th class="table-info">Unit Pelaksana (UP)</th>
                             <th class="table-info">Aksi</th>
                         </tr>
                     </thead>

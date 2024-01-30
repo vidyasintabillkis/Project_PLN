@@ -63,10 +63,10 @@
                     </li>
                     <li class="dropdown"><a href=""><span>Data</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="<?= base_url("/admin/up")?>">Data UP</a></li>
-                            <li><a href="<?= base_url("/admin/ulp")?>">Data ULP</a></li>
-                            <li><a href="<?= base_url("/admin/gi")?>">Data GI</a></li>
-                            <li><a href="<?= base_url("/admin/penyulang")?>">Data Penyulang</a></li>
+                            <li><a href="<?= base_url("/admin/up") ?>">Data UP</a></li>
+                            <li><a href="<?= base_url("/admin/ulp") ?>">Data ULP</a></li>
+                            <li><a href="<?= base_url("/admin/gi") ?>">Data GI</a></li>
+                            <li><a href="<?= base_url("/admin/penyulang") ?>">Data Penyulang</a></li>
                             <li><a href="#">Data Relay</a></li>
                         </ul>
                     </li>
@@ -85,28 +85,44 @@
         <section id="tambah" class="tambah section-bg"><br>
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-req">Tambah Data Unit Pelaksana (UP)</h6>
+                    <h6 class="m-0 font-weight-bold text-req">Tambah Data Penyulang</h6>
                 </div>
-                <form method="POST" action="<?= base_url('/admin/simpan up') ?>" enctype="multipart/form-data">
+                <form method="POST" action="<?= base_url("/admin/simpan penyulang") ?>" enctype="multipart/form-data">
                     <?= csrf_field() ?>
                     <div class="card-body">
-                        <!-- <div class="mb-3">
-                            <label class="small mb-1" for="unit">Unit</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>pilih nama unit</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div> -->
                         <div class="mb-3">
+                            <label class="small mb-1" for="unit">Gardu Induk (GI) </label>
+                            <select class="form-select" aria-label="Default select example" name="nama_gardu_induk" required>
+                                <option selected value="">Pilih Gardu Induk (GI)</option>
+                                <?php
+                                foreach ($gi as $gi) {
+                                ?>
+                                    <option value="<?= $gi['id_gardu_induk'] ?>">
+                                        <?= $gi['nama_gardu_induk'] ?>
+                                    </option>
+                                <?php
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="row g-3 mb-3">
                             <div class="col">
-                                <label for="small mb-1" for="up">Unit Pelaksana (UP)</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Nama UP" name="nama_up" required>
+                                <label for="small mb-1 label-width" for="unit">Penyulang Lama</label>
+                                <input type="text" class="form-control" placeholder="Masukkan Nama Penyulang Lama" aria-label="First name" name="nama_penyulang_lama" required>
+                            </div>
+                            <div class="col">
+                                <label for="small mb-1 label-width" for="unit">Penyulang Baru</label>
+                                <input type="text" class="form-control" placeholder="Masukkan Nama Penyulang Baru" aria-label="Last name" name="nama_penyulang_baru">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label for="small mb-1 label-width" for="unit">Kapasitas Trafo</label>
+                                <input type="text" class="form-control" placeholder="Masukkan Kapasitas Trafo" aria-label="First name" name="kapasitas_trafo" required>
                             </div>
                         </div>
                         <div class="d-flex justify-content-end mt-4">
-                            <a href="<?= base_url("admin/up") ?>" type="button" class="btn btn-warning btn-sm" style="margin-right: 10px; color:#ffff; ">Kembali</a>
+                            <a href="<?= base_url("admin/penyulang") ?>" type="button" class="btn btn-warning btn-sm" style="margin-right: 10px; color:#ffff; ">Kembali</a>
                             <button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary btn-sm">Simpan</button>
                         </div>
                     </div>

@@ -10,6 +10,10 @@ use App\Controllers\PenyulangController;
  * @var RouteCollection $routes
  */
 
+
+// Landingpage
+$routes->get('/up2d', 'Home::index');
+
 //DATA UP
 $routes->get('/admin/up', 'UpController::index');
 $routes->get('/admin/tambah up', 'UpController::tambah_up');

@@ -168,6 +168,31 @@
     <!-- End Hero -->
 
     <main id="main">
+
+        <!-- ======= cari Section ======= -->
+        <section id="about" class="About">
+            <div class="container" data-aos="fade-up">
+                <div class="main">
+                    <div class="container-fluid" data-aos="fade-up">
+                        <div class="section-title">
+                            <h2>Pertanyaan</h2>
+                        </div>
+                        <div class="footer-newsletter">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-6">
+                                        <!-- <h4>Join Our Newsletter</h4> -->
+                                        <p>Cari Penyulang disini</p>
+                                        <form action="" method="post">
+                                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        </section><!-- End Cari Section -->
+
+
         <!-- ======= Profil Section ======= -->
         <section id="team" class="Profile">
             <div class="container" data-aos="fade-up">

@@ -54,7 +54,7 @@
             </h1>
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto" href="<?= base_url("/UP2D Lampung#carosuel") ?>">Beranda</a></li>
+                    <li><a class="nav-link scrollto" href="<?= base_url("/up2d #carosuel") ?>">Beranda</a></li>
                     <li><a class="nav-link scrollto" href="#about">Cari</a></li>
                     <li><a class="nav-link scrollto" href="#team">Tentang Kami</a></li>
                     <li><a class="nav-link scrollto" href="#why-us">Pertanyaan</a></li>

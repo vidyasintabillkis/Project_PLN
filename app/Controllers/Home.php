@@ -8,4 +8,9 @@ class Home extends BaseController
     {
         return view('nonup2d/landingpage');
     }
+
+    public function tim(): string
+    {
+        return view('nonup2d/tim');
+    }
 }

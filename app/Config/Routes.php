@@ -13,6 +13,7 @@ use App\Controllers\PenyulangController;
 
 // Landingpage
 $routes->get('/up2d', 'Home::index');
+$routes->get('/nonup2d/tim', 'Home::tim');
 
 //DATA UP
 $routes->get('/admin/up', 'UpController::index');

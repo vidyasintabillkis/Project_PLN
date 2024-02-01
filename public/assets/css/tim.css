@@ -1,0 +1,257 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+
+section {
+    /* height: 100vh; */
+    padding: 60px 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section h2 {
+    /* color:#ffff; */
+    font-size: 100px;
+    letter-spacing: 2px;
+}
+
+/* sidebar */
+.sidebar {
+    position: fixed;
+    top: 50%;
+    /* margin-left: 15%; */
+    transform: translateY(-50%);
+    background-color: #ffffff;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.nav-link {
+    color: #414141;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.nav-link .fas {
+    color: #ffffff;
+}
+
+.nav-link i {
+    width: 70px;
+    height: 70px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a94aa;
+    transition: all 0.3s;
+}
+
+.nav-item:hover i {
+    transform: scale(1.1);
+    box-shadow: 10px 0 20px rgba(0, 0, 0, 0.397);
+}
+
+.nav-link .judul {
+    position: absolute;
+    background-color: #ffff00;
+    height: 100%;
+    padding-right: 100px;
+    padding-left: 20px;
+    line-height: 70px;
+    transform: translateX(-100%);
+    z-index: -1;
+    transition: all 0.3s;
+}
+
+.nav-item:hover .judul {
+    transform: translateX(0);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.timeline-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.timeline-wrapper {
+    /* margin-top: 10rem; */
+    /* position: relative; */
+    max-width: 100vw;
+    height: 88vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-X: auto;
+}
+
+.timeline {
+    position: absolute;
+    height: .12rem;
+    top: 60rem;
+    padding: 0 5rem;
+    margin-left: 10rem;
+    background-color: #888;
+    list-style-type: none;
+
+    --scale: 1;
+    display: flex;
+}
+
+.timeline li {
+    position: relative;
+    width: 11rem;
+}
+
+.timeline li::before,
+.timeline li::after,
+.timeline li .poin,
+.data {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(var(--scale));
+    transition: .5s ease;
+}
+
+.timeline li::before {
+    content: "";
+    top: 1rem;
+    display: inline-block;
+    width: 0.12rem;
+    height: 1rem;
+    background-color: #888;
+}
+
+.timeline li:nth-child(even)::before {
+    top: -1rem;
+}
+
+.timeline li:hover:before {
+    background-color: #1a94aa;
+}
+
+.timeline li::after {
+    content: attr(data-date);
+    justify-content: center;
+    top: -3.4rem;
+}
+
+.timeline li:nth-child(odd)::after {
+    top: 3.4rem;
+}
+
+.timeline li:hover:after,
+.timeline li .poin {
+    color: #000;
+
+}
+
+.timeline li .poin {
+    top: 2.4rem;
+    font: 600 1.1rem 'poppins', sans-serif;
+    white-space: pre;
+    opacity: 0;
+}
+
+.timeline li:nth-child(odd)>.poin {
+    top: -2.4rem;
+}
+
+.timeline li:hover .poin {
+    opacity: 1;
+}
+
+.data {
+    width: 1.3rem;
+    height: 1.3rem;
+    background-color: #888;
+    color: #ffff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: hidden;
+    transition: .3s ease;
+    text-align: justify;
+}
+
+.timeline li:hover .data {
+    background-color: #000;
+    --scale: 1.2;
+    cursor: pointer;
+    z-index: 200;
+}
+
+.data.show {
+    width: 22rem;
+    height: 22rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-image: linear-gradient(45deg, #939393, #1a94aa);
+    box-shadow: 0 .1rem .4rem #0004;
+    z-index: 100;
+}
+
+.data h3 {
+    text-transform: capitalize;
+}
+
+.data p {
+    background-color: #fff3;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-left: 0.7rem;
+}
+
+.data.show p {
+    margin-left: 0;
+}
+
+.data .close {
+    align-self: flex-start;
+    background-color: #000;
+    padding: .5rem .8rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+}
+
+.profil {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.profil img {
+    width: 80%;
+    height: 300px;
+    margin-left: 220px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.profil h2,
+.profil p {
+    margin-top: 10px;
+    margin-left: 240px;
+    margin-bottom: 20px;
+    text-align: justify;
+    max-width: calc(85% - 100px);
+}

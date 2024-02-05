@@ -71,13 +71,13 @@
     <!-- side bar -->
     <ul class="sidebar">
         <li class="nav-item">
-            <a href="<?= base_url("/nonup2d/tim") ?>" class="nav-link">
+            <a href="<?= base_url("/nonup2d/profile") ?>" class="nav-link">
                 <i class="fas fa-building"></i>
                 <span class="judul">Profil</span>
             </a>
         </li>
         <li class="nav-item">
-            <a href="<?= base_url("/nonup2d/organisasi") ?>" class="nav-link">
+            <a href="<?= base_url("/nonup2d/tim") ?>" class="nav-link">
                 <i class="fas fa-solid fa-sitemap"></i>
                 <span class="judul">Tim</span>
         </li>

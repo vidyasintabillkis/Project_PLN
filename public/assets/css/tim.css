@@ -5,7 +5,6 @@
     font-family: 'poppins', sans-serif;
 }
 
-
 section {
     /* height: 100vh; */
     padding: 60px 0;
@@ -94,7 +93,7 @@ html {
     /* margin-top: 10rem; */
     /* position: relative; */
     max-width: 100vw;
-    height: 88vh;
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -159,7 +158,7 @@ html {
 
 .timeline li:hover:after,
 .timeline li .poin {
-    color: #000;
+    color: #1a94aa;
 
 }
 
@@ -181,7 +180,7 @@ html {
 .data {
     width: 1.3rem;
     height: 1.3rem;
-    background-color: #888;
+    background-color: #125d72;
     color: #ffff;
     border-radius: 50%;
     display: flex;
@@ -193,7 +192,7 @@ html {
 }
 
 .timeline li:hover .data {
-    background-color: #000;
+    background-color: #1a94aa;
     --scale: 1.2;
     cursor: pointer;
     z-index: 200;
@@ -204,7 +203,7 @@ html {
     height: 22rem;
     border-radius: 1rem;
     padding: 1rem;
-    background-image: linear-gradient(45deg, #939393, #1a94aa);
+    background-image: linear-gradient(45deg, #3c3c3c, #1a94aa);
     box-shadow: 0 .1rem .4rem #0004;
     z-index: 100;
 }
@@ -226,7 +225,7 @@ html {
 
 .data .close {
     align-self: flex-start;
-    background-color: #000;
+    background-color: #1a94aa;
     padding: .5rem .8rem;
     border-radius: 2rem;
     font-size: 1rem;
@@ -254,4 +253,42 @@ html {
     margin-bottom: 20px;
     text-align: justify;
     max-width: calc(85% - 100px);
+}
+
+.profil p span,
+.tree span {
+    color: #1a94aa;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.tree {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-top: 85px;
+    position: relative;
+}
+
+.tree img {
+    max-width: 100%;
+    height: auto;
+    margin-left: 12.5rem;
+}
+
+.tree h2,
+.tree p {
+    margin-top: 10px;
+    margin-left: 240px;
+    margin-bottom: 20px;
+    text-align: justify;
+    max-width: calc(85% - 100px);
+}
+
+.tree li {
+    margin-left: 16rem;
+    text-align: justify;
+    max-width: calc(85% - 120px);
+    list-style: none;
+    margin-bottom: 1rem;
 }

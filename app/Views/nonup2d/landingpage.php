@@ -14,7 +14,7 @@
     <link href="<?= base_url("https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css") ?>" rel="stylesheet">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="<?= base_url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i") ?>" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="<?= base_url("assets/vendor/aos/aos.css") ?>" rel="stylesheet">
@@ -70,7 +70,7 @@
                 <!-- list Items -->
                 <div class="list">
                     <div class="item active">
-                        <img src="<?= base_url("/assets/images/up2d.jpeg") ?>">
+                        <img src="<?= base_url("/assets/images/img1.jpg") ?>">
                         <div class="content">
                             <p>design</p>
                             <h2>UP2D</h2>
@@ -166,33 +166,29 @@
             </div>
     </section>
     <!-- End Hero -->
-
     <main id="main">
-
         <!-- ======= cari Section ======= -->
-        <section id="about" class="About">
+        <section id="cari" class="Cari">
             <div class="container" data-aos="fade-up">
                 <div class="main">
                     <div class="container-fluid" data-aos="fade-up">
                         <div class="section-title">
-                            <h2>Pertanyaan</h2>
+                            <h2>Cari Penyulang</h2>
                         </div>
-                        <div class="footer-newsletter">
+                        <!-- <div class="footer-newsletter">
                             <div class="container">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-6">
-                                        <!-- <h4>Join Our Newsletter</h4> -->
-                                        <p>Cari Penyulang disini</p>
+                                        <h4>Join Our Newsletter</h4> -->
+                        <!-- <p>Cari Penyulang disini</p>
                                         <form action="" method="post">
                                             <input type="email" name="email"><input type="submit" value="Subscribe">
                                         </form>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-        </section><!-- End Cari Section -->
-
-
+                        </div> -->
+        </section><!-- End Skills Section -->
         <!-- ======= Profil Section ======= -->
         <section id="team" class="Profile">
             <div class="container" data-aos="fade-up">
@@ -206,10 +202,10 @@
                         <li> UP3 Metro</li>
                         <li> UP3 Kotabumi</li>
                         <div class="btn">
-                            <a href="">
+                            <a href="<?= base_url("/nonup2d/tim") ?>">
                                 <button type="button">Tim Kami</button>
                             </a>
-                            <a href="<?= base_url("/nonup2d/tim") ?>">
+                            <a href="<?= base_url("/nonup2d/profil") ?>">
                                 <button type="button" class="btn2">Selengkapnya</button>
                             </a>
                         </div>
@@ -217,7 +213,6 @@
                 </div>
             </div>
         </section><!-- End Skills Section -->
-
         <!-- ======= Why Us Section ======= -->
         <section id="why-us" class="why-us section-bg">
             <div class="container-fluid" data-aos="fade-up">
@@ -228,52 +223,46 @@
                     <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
 
                         <div class="content">
-                            <h3>Eum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3>
+                            <h3>Pertanyaan yang <strong>Sering Ditanyakan</strong> Terkait Setting Proteksi</h3>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                                Berikut ini 3 pertanyaan umum yang sering ditanyakan mengenai setting proteksi antara lain:
                             </p>
                         </div>
 
                         <div class="accordion-list">
                             <ul>
                                 <li>
-                                    <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span> Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                    <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span> Mengapa proteksi dapat mengalami kegagalan? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                                     <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
                                         <p>
-                                            Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                                            Kegagalan proteksi dapat terjadi karena berbagai alasan, seperti kerusakan peralatan, kesalahan konfigurasi, atau serangan yang berhasil melewati sistem pertahanan.
                                         </p>
                                     </div>
                                 </li>
-
                                 <li>
-                                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> Apa saja faktor-faktor yang dapat menyebabkan kegagalan proteksi?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                                     <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
                                         <p>
-                                            Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                                            Faktor-faktor penyebab kegagalan proteksi meliputi perhitungan setting yang salah, kerusakan relay, kerusakan mekanik SB, perhitungan grading time open close svb yang tidak tepat.
                                         </p>
                                     </div>
                                 </li>
                                 <li>
-                                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> Apa langkah tindak lanjut yang dapat diambil untuk mengatasi kegagalan proteksi? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                                     <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
                                         <p>
-                                            Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                                            Tindak lanjut untuk mengatasi kegagalan proteksi melibatkan Scaning dan setting proteksi, dilakukan uji relay proteksi hingga simulasi gangguan untuk memastikan peralatan proteksi bekerja sesuai skenario yang diinginkan.
                                         </p>
                                     </div>
                                 </li>
-
                             </ul>
                         </div>
-
                     </div>
-
                     <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("/assets/images/electrical.jpg");' data-aos="zoom-in" data-aos-delay="150">&nbsp;</div>
                 </div>
-
             </div>
         </section><!-- End Why Us Section -->
     </main><!-- End #main -->
-
     <!-- ======= Footer ======= -->
     <footer id="footer">
         <div class="footer-top">

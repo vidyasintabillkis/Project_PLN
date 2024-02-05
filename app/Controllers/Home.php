@@ -13,4 +13,9 @@ class Home extends BaseController
     {
         return view('nonup2d/tim');
     }
+
+    public function organisasi(): string
+    {
+        return view('nonup2d/organisasi');
+    }
 }

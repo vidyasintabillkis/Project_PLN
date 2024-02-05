@@ -126,7 +126,6 @@ h6 {
 .slider .list .item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 .slider .list .item::after {
@@ -603,7 +602,7 @@ section {
   display: block;
   width: 40px;
   height: 3px;
-  background: #47b2e4;
+  background: #1a94aa;
   bottom: 0;
   left: calc(50% - 20px);
 }
@@ -622,7 +621,7 @@ section {
 .why-us .content h3 {
   font-weight: 400;
   font-size: 34px;
-  color: #37517e;
+  color: #1a94aa;
 }
 
 .why-us .content h4 {
@@ -671,10 +670,11 @@ section {
   padding-right: 30px;
   outline: none;
   cursor: pointer;
+  color: #1a94aa;
 }
 
 .why-us .accordion-list span {
-  color: #47b2e4;
+  color: #1a94aa;
   font-weight: 600;
   font-size: 18px;
   padding-right: 10px;
@@ -701,7 +701,7 @@ section {
 }
 
 .why-us .accordion-list a.collapsed:hover {
-  color: #47b2e4;
+  color: #1a94aa;
 }
 
 .why-us .accordion-list a.collapsed .icon-show {
@@ -1100,8 +1100,6 @@ section {
 #about .footer-newsletter form input[type=submit]:hover {
   background: #209dd8;
 }
-
-
 
 @media (max-width: 768px) {
   #footer .footer-bottom {

@@ -86,20 +86,36 @@
         <section id="tambah" class="tambah section-bg"><br>
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-req">Tambah Data Penyulang</h6>
+                    <h6 class="m-0 font-weight-bold text-req">Tambah Data Relay Proteksi</h6>
                 </div>
-                <form method="POST" action="<?= base_url("/admin/simpan penyulang") ?>" enctype="multipart/form-data">
+                <form method="POST" action="<?= base_url('admin/relay/' . $relay['id_relay'] . '/edit') ?>" enctype="multipart/form-data">
+                    <input type="hidden" name="_method" value="PUT">
                     <?= csrf_field() ?>
                     <div class="card-body">
                         <div class="mb-3">
-                            <label class="small mb-1" for="unit">Gardu Induk (GI) </label>
-                            <select class="form-select" aria-label="Default select example" name="nama_gardu_induk" required>
-                                <option selected value="">Pilih Gardu Induk (GI)</option>
+                            <label class="small mb-1" for="unit">Unit Layanan Pelanggan (ULP)<b style="color: red;">*</b></label>
+                            <select class="form-select" aria-label="Default select example" name="nama_ulp" required>
+                                <option selected value="">Pilih Unit Layanan Pelanggan (ULP)</option>
                                 <?php
-                                foreach ($gi as $gi) {
+                                foreach ($ulp as $ulp) {
                                 ?>
-                                    <option value="<?= $gi['id_gardu_induk'] ?>">
-                                        <?= $gi['nama_gardu_induk'] ?>
+                                    <option value="<?= $ulp['id_ulp'] ?>" <?= $relay['id_ulp'] == $ulp['id_ulp'] ? 'selected' : "" ?>>
+                                        <?= $ulp['nama_ulp'] ?>
+                                    </option>
+                                <?php
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="small mb-1" for="unit">Penyulang<b style="color: red;">*</b></label>
+                            <select class="form-select" aria-label="Default select example" name="nama_penyulang_lama" required>
+                                <option selected value="">Pilih Penyulang</option>
+                                <?php
+                                foreach ($penyulang as $p) {
+                                ?>
+                                    <option value="<?= $p['id_penyulang'] ?>" <?= $relay['id_penyulang'] == $p['id_penyulang'] ? 'selected' : "" ?>>
+                                        <?= $p['nama_penyulang_lama'] ?>
                                     </option>
                                 <?php
                                 }
@@ -108,22 +124,61 @@
                         </div>
                         <div class="row g-3 mb-3">
                             <div class="col">
-                                <label for="small mb-1 label-width" for="unit">Penyulang Lama</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Nama Penyulang Lama" aria-label="First name" name="nama_penyulang_lama" required>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Nama Relay<b style="color: red;">*</b></label>
+                                    <input type="text" class="form-control" aria-label="First name" name="nama_relay" value="<?= $relay['nama_relay'] ?>" required>
+                                </div>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Status Relay</label>
+                                    <input type="text" class="form-control" aria-label="First name" name="status_relay" value="<?= $relay['status_relay'] ?>">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Urutan Pemutus<b style="color: red;">*</b></label>
+                                    <input type="number" class="form-control" aria-label="First name" name="urutan_keypoint" value="<?= $relay['urutan_keypoint'] ?>" required>
+                                </div>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Nama Pemutus<b style="color: red;">*</b></label>
+                                    <input type="text" class="form-control" aria-label="First name" name="nama_keypoint" value="<?= $relay['nama_keypoint'] ?>" required>
+                                </div>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Merk Relay</label>
+                                    <input type="text" class="form-control" aria-label="First name" name="merk_relay" value="<?= $relay['merk_relay'] ?>">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Tipe Relay</label>
+                                    <input type="text" class="form-control" aria-label="First name" name="type_relay" value="<?= $relay['type_relay'] ?>">
+                                </div>
                             </div>
                             <div class="col">
-                                <label for="small mb-1 label-width" for="unit">Penyulang Baru</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Nama Penyulang Baru" aria-label="Last name" name="nama_penyulang_baru">
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Seri Relay</label>
+                                    <input type="text" class="form-control" aria-label="First name" name="seri_relay" value="<?= $relay['seri_relay'] ?>">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Tahun Relay</label>
+                                    <input type="number" class="form-control" aria-label="First name" name="tahun_relay" value="<?= $relay['tahun_relay'] ?>">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Umur Relay</label>
+                                    <input type="number" class="form-control" aria-label="First name" name="umur_relay" value="<?= $relay['umur_relay'] ?>">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Com Relay</label>
+                                    <input type="text" class="form-control" aria-label="First name" name="com_relay" value="<?= $relay['com_relay'] ?>">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Rasio CT Primer<b style="color: red;">*</b></label>
+                                    <input type="number" class="form-control" aria-label="First name" name="rasio_ct_primer" value="<?= $relay['rasio_ct_primer'] ?>" required>
+                                </div>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Rasio CT Sekunder<b style="color: red;">*</b></label>
+                                    <input type="number" class="form-control" aria-label="First name" name="rasio_ct_sekunder" value="<?= $relay['rasio_ct_sekunder'] ?>" required>
+                                </div>
                             </div>
                         </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label for="small mb-1 label-width" for="unit">Kapasitas Trafo</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Kapasitas Trafo" aria-label="First name" name="kapasitas_trafo" required>
-                            </div>
-                        </div>
+
                         <div class="d-flex justify-content-end mt-4">
-                            <a href="<?= base_url("admin/penyulang") ?>" type="button" class="btn btn-warning btn-sm" style="margin-right: 10px; color:#ffff; ">Kembali</a>
+                            <a href="<?= base_url("admin/relay") ?>" type="button" class="btn btn-warning btn-sm" style="margin-right: 10px; color:#ffff; ">Kembali</a>
                             <button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary btn-sm">Simpan</button>
                         </div>
                     </div>

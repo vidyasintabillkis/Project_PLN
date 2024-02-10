@@ -47,11 +47,12 @@
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top ">
         <div class="container d-flex align-items-center">
-
-            <h1 class="logo me-auto"><a href="#">UP2D</a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
+            <h1 class="logo me-auto">
+                <a href="#">
+                    <img src="<?= base_url("assets/images/logo_pln.png") ?>" alt="UP2D Logo" class="img-fluid">
+                    UP2D LAMPUNG
+                </a>
+            </h1>
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto" href="#">Cari</a></li>
@@ -63,11 +64,11 @@
                     </li>
                     <li class="dropdown"><a href=""><span>Data</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="<?= base_url("/admin/up")?>">Data UP</a></li>
-                            <li><a href="<?= base_url("/admin/ulp")?>">Data ULP</a></li>
-                            <li><a href="<?= base_url("/admin/gi")?>">Data GI</a></li>
-                            <li><a href="<?= base_url("/admin/penyulang")?>">Data Penyulang</a></li>
-                            <li><a href="#">Data Relay</a></li>
+                            <li><a href="<?= base_url("/admin/up") ?>">Data UP</a></li>
+                            <li><a href="<?= base_url("/admin/ulp") ?>">Data ULP</a></li>
+                            <li><a href="<?= base_url("/admin/gi") ?>">Data GI</a></li>
+                            <li><a href="<?= base_url("/admin/penyulang") ?>">Data Penyulang</a></li>
+                            <li><a href="<?= base_url("/admin/relay") ?>">Data Relay</a></li>
                         </ul>
                     </li>
                     <li><a class="getstarted scrollto" href="#about">Keluar</a></li>
@@ -91,7 +92,7 @@
                     <?= csrf_field() ?>
                     <div class="card-body">
                         <div class="mb-3">
-                            <label class="small mb-1" for="unit" >Unit Pelaksana (UP) </label>
+                            <label class="small mb-1" for="unit">Unit Pelaksana (UP) </label>
                             <select class="form-select" aria-label="Default select example" name="nama_up" required>
                                 <option selected value="">Pilih Unit Pelayanan (UP)</option>
                                 <?php

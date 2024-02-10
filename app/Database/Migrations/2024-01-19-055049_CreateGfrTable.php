@@ -47,6 +47,20 @@ class CreateGfrTable extends Migration
                 'type'              => 'VARCHAR', 
                 'constraint'        => 3,
                 'null'              => true,
+            ], 
+            'gfr_arus_3' => [ 
+                'type'              => 'FLOAT',
+                'null'              => true,
+            ], 
+            'gfr_delay' => [ 
+                'type'              => 'FLOAT', 
+                'constraint'        => 4,
+                'null'              => true,
+            ], 
+            'gfr_curva_3' => [ 
+                'type'              => 'VARCHAR', 
+                'constraint'        => 3,
+                'null'              => true,
             ],
         ]); 
 

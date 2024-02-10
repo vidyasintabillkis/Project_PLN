@@ -5,6 +5,7 @@ use App\Controllers\UpController;
 use App\Controllers\UlpController;
 use App\Controllers\GiController;
 use App\Controllers\PenyulangController;
+use App\Controllers\RelayController;
 
 /**
  * @var RouteCollection $routes
@@ -15,7 +16,6 @@ use App\Controllers\PenyulangController;
 $routes->get('/up2d', 'Home::index');
 $routes->get('/nonup2d/profile', 'Home::tim');
 $routes->get('/nonup2d/tim', 'Home::organisasi');
-
 
 //DATA UP
 $routes->get('/admin/up', 'UpController::index');
@@ -48,3 +48,12 @@ $routes->post('/admin/simpan penyulang', 'PenyulangController::simpan');
 $routes->get('admin/penyulang/(:any)/edit', [PenyulangController::class, 'edit']);
 $routes->put('admin/penyulang/(:any)', [PenyulangController::class, 'update']);
 $routes->delete('admin/penyulang/(:any)', [PenyulangController::class, 'hapus']);
+
+//DATA Relay
+$routes->get('/admin/relay', 'RelayController::index');
+$routes->get('/admin/tambah relay', 'RelayController::tambah');
+$routes->post('/admin/simpan relay', 'RelayController::simpan');
+$routes->get('admin/relay/(:any)/edit', [RelayController::class, 'edit']);
+$routes->put('admin/relay/(:any)', [RelayController::class, 'update']);
+$routes->delete('admin/relay/(:any)', [RelayController::class, 'hapus']);
+$routes->get('/admin/relay/(:any)', 'RelayController::lihat/$1');

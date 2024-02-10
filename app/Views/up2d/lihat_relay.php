@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title><?= $title ?></title>
+    <title>Data Relay Proteksi</title>
     <link rel="shortcut icon" href="<?= base_url("assets/images/logo_pln.png") ?>">
     <meta content="" name="description">
     <meta content="" name="keywords">
@@ -81,54 +81,89 @@
         </div>
     </header><!-- End Header -->
 
-
     <main id="main">
-        <div class="swal" data-swal="<?= session()->get('message'); ?>"></div>
         <!-- ======= Why Us Section ======= -->
-        <section id="unit" class="unit section-bg"><br>
-            <div class="container p-3 my-5">
-                <!-- DataTable Code starts -->
-                <div class="text-right">
-                    <a href="<?= base_url("admin/tambah penyulang") ?>" class="btn btn-req border-dark" style="margin-bottom: 20px;">Tambah Data</a>
-                </div>
-                <table id="example" class="table" style="width:100%; margin-top: 20px;">
-                    <thead>
-                        <tr>
-                            <th class="table-info">No</th>
-                            <th class="table-info">Gardu Induk (GI)</th>
-                            <th class="table-info">Penyulang Lama</th>
-                            <th class="table-info">Penyulang Baru</th>
-                            <th class="table-info">Kapasitas Trafo</th>
-                            <th class="table-info">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $i = 1;
-                        foreach ($penyulang as $penyulang) {
-                        ?>
-                            <tr>
-                                <td><?= $i++ ?></td>
-                                <td><?= $penyulang['nama_gardu_induk'] ?></td>
-                                <td><?= $penyulang['nama_penyulang_lama'] ?></td>
-                                <td><?= $penyulang['nama_penyulang_baru'] ?></td>
-                                <td><?= $penyulang['kapasitas_trafo'] ?></td>
-                                <td class="d-flex justify-content">
-                                    <a href="<?= base_url('admin/penyulang/' . $penyulang['id_penyulang'] . '/edit') ?>" type="button" class="btn btn-warning btn-sm mr-2" style="margin-right: 10px; color:#ffff; ">
-                                        Ubah
-                                    </a>
-                                    <form action="<?= base_url('admin/penyulang/' . $penyulang['id_penyulang']) ?>" method="POST">
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <?= csrf_field() ?>
-                                        <button type="submit" class="btn btn-danger btn-sm btn-hapus">Hapus</button>
+        <section id="unit2" class="unit section-bg"><br>
+            <div class="container-fluid">
+                <div class="container-xl px-4 mt-4"><br>
+                    <div class="row justify-content-center">
+                        <div class="col-xl-8">
+                            <div class="card mb-4 acc">
+                                <div class="card-header">Data Relay Proteksi</div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="mb-2">
+                                                    <label class="small mb-1"><b>Unit Layanan Pelanggan (ULP)</b></label>
+                                                    <p><?= $nama_ulp ?></p>
+                                                </div>
+                                                <div class="mb-2">
+                                                    <label class="small mb-1"><b>Penyulang</b></label>
+                                                    <p><?= $nama_penyulang_lama ?></p>
+                                                </div>
+                                                <div class="mb-2">
+                                                    <label class="small mb-1"><b>Nama Relay</b></label>
+                                                    <p><?= $nama_relay ?></p>
+                                                </div>
+                                                <div class="mb-2">
+                                                    <label class="small mb-1"><b>Status Relay</b></label>
+                                                    <p><?= $status_relay ?></p>
+                                                </div>
+                                                <div class="mb-2">
+                                                    <label class="small mb-1"><b>Urutan Pemutus</b></label>
+                                                    <p><?= $urutan_keypoint ?></p>
+                                                </div>
+                                                <div class="mb-2">
+                                                    <label class="small mb-1"><b>Nama Pemutus</b></label>
+                                                    <p><?= $nama_keypoint ?></p>
+                                                </div>
+                                                <div class="mb-2">
+                                                    <label class="small mb-1"><b>Merk Relay</b></label>
+                                                    <p><?= $merk_relay ?></p>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="mb-2">
+                                                    <label class="small mb-1"><b>Tipe Relay</b></label>
+                                                    <p><?= $type_relay ?></p>
+                                                </div>
+                                                <div class="mb-2">
+                                                    <label class="small mb-1"><b>Seri Relay</b></label>
+                                                    <p><?= $seri_relay ?></p>
+                                                </div>
+                                                <div class="mb-2">
+                                                    <label class="small mb-1"><b>Tahun Relay</b></label>
+                                                    <p><?= $tahun_relay ?></p>
+                                                </div>
+                                                <div class="mb-2">
+                                                    <label class="small mb-1"><b>Umur Relay</b></label>
+                                                    <p><?= $umur_relay ?></p>
+                                                </div>
+                                                <div class="mb-2">
+                                                    <label class="small mb-1"><b>Com Relay</b></label>
+                                                    <p><?= $com_relay ?></p>
+                                                </div>
+                                                <div class="mb-2">
+                                                    <label class="small mb-1"><b>Rasio CT Primer</b></label>
+                                                    <p><?= $rasio_ct_primer ?></p>
+                                                </div>
+                                                <div class="mb-2">
+                                                    <label class="small mb-1"><b>Rasio CT Sekunder</b></label>
+                                                    <p><?= $rasio_ct_sekunder ?></p>
+                                                </div>
+                                                <div class="d-flex justify-content-end mt-2">
+                                                    <a href="<?= base_url("admin/relay") ?>" type="button" class="btn btn-primary btn-sm" style="margin-right: 10px; color:#ffff; ">Kembali</a>
+                                                    <a href="<?= base_url('admin/relay/' . $id_relay . '/edit') ?>" type="button" class="btn btn-warning btn-sm" style="color:#ffff; ">Ubah</a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </form>
-                                </td>
-                            </tr>
-                        <?php
-                        }
-                        ?>
-                    </tbody>
-                </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <!-- End Why Us Section -->

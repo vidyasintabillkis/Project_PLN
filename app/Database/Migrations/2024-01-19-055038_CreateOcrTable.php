@@ -48,6 +48,20 @@ class CreateOcrTable extends Migration
                 'type'              => 'VARCHAR', 
                 'constraint'        => 3,
                 'null'              => true,
+            ],  
+            'ocr_arus_3' => [ 
+                'type'              => 'FLOAT', 
+                'null'              => true,
+            ], 
+            'ocr_delay' => [ 
+                'type'              => 'FLOAT', 
+                'constraint'        => 4,
+                'null'              => true,
+            ], 
+            'ocr_curva_3' => [ 
+                'type'              => 'VARCHAR', 
+                'constraint'        => 3,
+                'null'              => true,
             ], 
         ]); 
 

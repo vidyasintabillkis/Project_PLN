@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class RelayModel extends Model
 {
     protected $table            = 'data_relay_proteksi';
-    protected $primaryKey       = 'id_relay_proteksi';
+    protected $primaryKey       = 'id_relay';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
@@ -28,6 +28,20 @@ class RelayModel extends Model
             ->join('data_penyulang', 'data_penyulang.id_penyulang = data_relay_proteksi.id_penyulang')
             ->findAll();
     }
+
+    public function saveRelay ($data){
+        return $this->insert($data);
+    }
+
+    public function updateRelay($data, $id){
+        return $this->update($id, $data); 
+    }
+
+    public function deleteRelay($id){
+        return $this->delete($id);
+    }
+
+
 
     // // Dates
     // protected $useTimestamps = false;

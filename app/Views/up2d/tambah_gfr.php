@@ -86,34 +86,100 @@
         <section id="tambah" class="tambah section-bg"><br>
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-req">Tambah Data Unit Layanan Pelanggan (ULP)</h6>
+                    <h6 class="m-0 font-weight-bold text-req">Tambah Data Setting Proteksi GFR</h6>
                 </div>
-                <form method="POST" action="<?= base_url('/admin/simpan ulp') ?>" enctype="multipart/form-data">
+                <form method="POST" action="<?= base_url("/admin/simpan gfr") ?>" enctype="multipart/form-data">
                     <?= csrf_field() ?>
                     <div class="card-body">
                         <div class="mb-3">
-                            <label class="small mb-1" for="unit">Unit Pelaksana (UP) </label>
-                            <select class="form-select" aria-label="Default select example" name="nama_up" required>
-                                <option selected value="">Pilih Unit Pelayanan (UP)</option>
+                            <label class="small mb-1" for="unit">Nama Pemutus<b style="color: red;">*</b></label>
+                            <select class="form-select" aria-label="Default select example" name="nama_keypoint" required>
+                                <option selected value="">Pilih Pemutus</option>
                                 <?php
-                                foreach ($up as $up) {
+                                foreach ($relay as $relay) {
                                 ?>
-                                    <option value="<?= $up['id_up'] ?>">
-                                        <?= $up['nama_up'] ?>
+                                    <option value="<?= $relay['id_relay'] ?>">
+                                        <?= $relay['nama_keypoint'] ?>
                                     </option>
                                 <?php
                                 }
                                 ?>
                             </select>
                         </div>
-                        <div class="mb-3">
+                        <div class="row g-3 mb-3">
                             <div class="col">
-                                <label for="small mb-1" for="up">Unit Layanan Pelanggan (ULP)</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Nama ULP" name="nama_ulp" required>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Arus (I) Tahap 1</label>
+                                    <input type="number" class="form-control" aria-label="First name" name="gfr_arus_1" step="0.0000001">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">TMS</label>
+                                    <input type="number" class="form-control" aria-label="First name" name="gfr_tms" step="0.0000001">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Kurva Tahap 1</label>
+                                    <select class="form-select" aria-label="Default select example" name="gfr_curva_1">
+                                        <option selected value="">Pilih Kurva</option>
+                                        <option value="SI">SI</option>
+                                        <option value="VI">VI</option>
+                                        <option value="EI">EI</option>
+                                        <option value="UI">UI</option>
+                                        <option value="LI">LI</option>
+                                        <option value="Thermal">Thermal</option>
+                                        <option value="DT">DT</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Arus (I) Tahap 2</label>
+                                    <input type="number" class="form-control" aria-label="First name" name="gfr_arus_2" step="0.0000001">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">TD</label>
+                                    <input type="number" class="form-control" aria-label="First name" name="gfr_td" step="0.0000001">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Kurva Tahap 2</label>
+                                    <select class="form-select" aria-label="Default select example" name="gfr_curva_2">
+                                        <option selected value="">Pilih Kurva</option>
+                                        <option value="SI">SI</option>
+                                        <option value="VI">VI</option>
+                                        <option value="EI">EI</option>
+                                        <option value="UI">UI</option>
+                                        <option value="LI">LI</option>
+                                        <option value="Thermal">Thermal</option>
+                                        <option value="DT">DT</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Arus (I) Tahap 3</label>
+                                    <input type="number" class="form-control" aria-label="First name" name="gfr_arus_3" step="0.0000001">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Delay</label>
+                                    <input type="number" class="form-control" aria-label="First name" name="gfr_delay" step="0.0000001">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Kurva Tahap 3</label>
+                                    <select class="form-select" aria-label="Default select example" name="gfr_curva_3">
+                                        <option selected value="">Pilih Kurva</option>
+                                        <option value="SI">SI</option>
+                                        <option value="VI">VI</option>
+                                        <option value="EI">EI</option>
+                                        <option value="UI">UI</option>
+                                        <option value="LI">LI</option>
+                                        <option value="Thermal">Thermal</option>
+                                        <option value="DT">DT</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
+
                         <div class="d-flex justify-content-end mt-4">
-                            <a href="<?= base_url("admin/ulp") ?>" type="button" class="btn btn-warning btn-sm" style="margin-right: 10px; color:#ffff; ">Kembali</a>
+                            <a href="<?= base_url("admin/gfr") ?>" type="button" class="btn btn-warning btn-sm" style="margin-right: 10px; color:#ffff; ">Kembali</a>
                             <button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary btn-sm">Simpan</button>
                         </div>
                     </div>

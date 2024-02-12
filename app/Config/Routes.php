@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\GfrController;
 use CodeIgniter\Router\RouteCollection;
 use App\Controllers\UpController;
 use App\Controllers\UlpController;
@@ -66,3 +67,11 @@ $routes->post('/admin/simpan ocr', 'OcrController::simpan');
 $routes->get('admin/ocr/(:any)/edit', [OcrController::class, 'edit']);
 $routes->put('admin/ocr/(:any)', [OcrController::class, 'update']);
 $routes->delete('admin/ocr/(:any)', [OcrController::class, 'hapus']);
+
+//DATA OCR
+$routes->get('/admin/gfr', 'GfrController::index');
+$routes->get('/admin/tambah gfr', 'GfrController::tambah');
+$routes->post('/admin/simpan gfr', 'GfrController::simpan');
+$routes->get('admin/gfr/(:any)/edit', [GfrController::class, 'edit']);
+$routes->put('admin/gfr/(:any)', [GfrController::class, 'update']);
+$routes->delete('admin/gfr/(:any)', [GfrController::class, 'hapus']);

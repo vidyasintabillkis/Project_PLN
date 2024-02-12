@@ -59,7 +59,7 @@
                     <li class="dropdown"><a href="#"><span>Jenis Setting Proteksi</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="<?= base_url("/admin/ocr") ?>">OCR</a></li>
-                            <li><a href="#">GFR</a></li>
+                            <li><a href="<?= base_url("/admin/gfr") ?>">GFR</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a href=""><span>Data</span> <i class="bi bi-chevron-down"></i></a>

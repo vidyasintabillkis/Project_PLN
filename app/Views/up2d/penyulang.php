@@ -60,7 +60,7 @@
                     <li><a class="nav-link scrollto" href="#">Cari</a></li>
                     <li class="dropdown"><a href="#"><span>Jenis Setting Proteksi</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="#">OCR</a></li>
+                            <li><a href="<?= base_url("/admin/ocr") ?>">OCR</a></li>
                             <li><a href="#">GFR</a></li>
                         </ul>
                     </li>

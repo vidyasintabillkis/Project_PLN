@@ -75,3 +75,6 @@ $routes->post('/admin/simpan gfr', 'GfrController::simpan');
 $routes->get('admin/gfr/(:any)/edit', [GfrController::class, 'edit']);
 $routes->put('admin/gfr/(:any)', [GfrController::class, 'update']);
 $routes->delete('admin/gfr/(:any)', [GfrController::class, 'hapus']);
+
+//CARI
+$routes->get('/admin/cari', 'Home::cari');

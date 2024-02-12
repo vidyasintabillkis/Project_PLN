@@ -4,6 +4,7 @@ use CodeIgniter\Router\RouteCollection;
 use App\Controllers\UpController;
 use App\Controllers\UlpController;
 use App\Controllers\GiController;
+use App\Controllers\OcrController;
 use App\Controllers\PenyulangController;
 use App\Controllers\RelayController;
 
@@ -57,3 +58,11 @@ $routes->get('admin/relay/(:any)/edit', [RelayController::class, 'edit']);
 $routes->put('admin/relay/(:any)', [RelayController::class, 'update']);
 $routes->delete('admin/relay/(:any)', [RelayController::class, 'hapus']);
 $routes->get('/admin/relay/(:any)', 'RelayController::lihat/$1');
+
+//DATA OCR
+$routes->get('/admin/ocr', 'OcrController::index');
+$routes->get('/admin/tambah ocr', 'OcrController::tambah');
+$routes->post('/admin/simpan ocr', 'OcrController::simpan');
+$routes->get('admin/ocr/(:any)/edit', [OcrController::class, 'edit']);
+$routes->put('admin/ocr/(:any)', [OcrController::class, 'update']);
+$routes->delete('admin/ocr/(:any)', [OcrController::class, 'hapus']);

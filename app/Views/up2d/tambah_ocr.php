@@ -86,21 +86,20 @@
         <section id="tambah" class="tambah section-bg"><br>
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-req">Ubah Data Penyulang</h6>
+                    <h6 class="m-0 font-weight-bold text-req">Tambah Data Setting Proteksi OCR</h6>
                 </div>
-                <form method="POST" action="<?= base_url('admin/penyulang/' . $penyulang['id_penyulang'] . '/edit') ?>" enctype="multipart/form-data">
-                    <input type="hidden" name="_method" value="PUT">
+                <form method="POST" action="<?= base_url("/admin/simpan ocr") ?>" enctype="multipart/form-data">
                     <?= csrf_field() ?>
                     <div class="card-body">
                         <div class="mb-3">
-                            <label class="small mb-1" for="unit">Gardu Induk (GI) </label>
-                            <select class="form-select" aria-label="Default select example" name="nama_gardu_induk" required>
-                                <option selected value="">Pilih Gardu Induk (GI)</option>
+                            <label class="small mb-1" for="unit">Nama Pemutus<b style="color: red;">*</b></label>
+                            <select class="form-select" aria-label="Default select example" name="nama_keypoint" required>
+                                <option selected value="">Pilih Pemutus</option>
                                 <?php
-                                foreach ($gi as $gi) {
+                                foreach ($relay as $relay) {
                                 ?>
-                                    <option value="<?= $gi['id_gardu_induk'] ?>" <?= $penyulang['id_gardu_induk'] == $gi['id_gardu_induk'] ? 'selected' : "" ?>>
-                                        <?= $gi['nama_gardu_induk'] ?>
+                                    <option value="<?= $relay['id_relay'] ?>">
+                                        <?= $relay['nama_keypoint'] ?>
                                     </option>
                                 <?php
                                 }
@@ -109,22 +108,78 @@
                         </div>
                         <div class="row g-3 mb-3">
                             <div class="col">
-                                <label for="small mb-1 label-width" for="unit">Penyulang Lama</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Nama Penyulang Lama" aria-label="First name" name="nama_penyulang_lama" value="<?= $penyulang['nama_penyulang_lama'] ?>" required>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Arus (I) Tahap 1</label>
+                                    <input type="number" class="form-control" aria-label="First name" name="ocr_arus_1" step="0.0000001">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">TMS</label>
+                                    <input type="number" class="form-control" aria-label="First name" name="ocr_tms" step="0.0000001">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Kurva Tahap 1</label>
+                                    <select class="form-select" aria-label="Default select example" name="ocr_curva_1">
+                                        <option selected value="">Pilih Kurva</option>
+                                        <option value="SI">SI</option>
+                                        <option value="VI">VI</option>
+                                        <option value="EI">EI</option>
+                                        <option value="UI">UI</option>
+                                        <option value="LI">LI</option>
+                                        <option value="Thermal">Thermal</option>
+                                        <option value="DT">DT</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="col">
-                                <label for="small mb-1 label-width" for="unit">Penyulang Baru</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Nama Penyulang Baru" aria-label="Last name" name="nama_penyulang_baru" value="<?= $penyulang['nama_penyulang_baru'] ?>">
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Arus (I) Tahap 2</label>
+                                    <input type="number" class="form-control" aria-label="First name" name="ocr_arus_2" step="0.0000001">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">TD</label>
+                                    <input type="number" class="form-control" aria-label="First name" name="ocr_td" step="0.0000001">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Kurva Tahap 2</label>
+                                    <select class="form-select" aria-label="Default select example" name="ocr_curva_2">
+                                        <option selected value="">Pilih Kurva</option>
+                                        <option value="SI">SI</option>
+                                        <option value="VI">VI</option>
+                                        <option value="EI">EI</option>
+                                        <option value="UI">UI</option>
+                                        <option value="LI">LI</option>
+                                        <option value="Thermal">Thermal</option>
+                                        <option value="DT">DT</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row mb-3">
                             <div class="col">
-                                <label for="small mb-1 label-width" for="unit">Kapasitas Trafo</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Kapasitas Trafo" aria-label="First name" name="kapasitas_trafo" value="<?= $penyulang['kapasitas_trafo'] ?>" required>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Arus (I) Tahap 3</label>
+                                    <input type="number" class="form-control" aria-label="First name" name="ocr_arus_3" step="0.0000001">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Delay</label>
+                                    <input type="number" class="form-control" aria-label="First name" name="ocr_delay" step="0.0000001">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="small mb-1 label-width" for="unit">Kurva Tahap 3</label>
+                                    <select class="form-select" aria-label="Default select example" name="ocr_curva_3">
+                                        <option selected value="">Pilih Kurva</option>
+                                        <option value="SI">SI</option>
+                                        <option value="VI">VI</option>
+                                        <option value="EI">EI</option>
+                                        <option value="UI">UI</option>
+                                        <option value="LI">LI</option>
+                                        <option value="Thermal">Thermal</option>
+                                        <option value="DT">DT</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
+
                         <div class="d-flex justify-content-end mt-4">
-                            <a href="<?= base_url("admin/penyulang") ?>" type="button" class="btn btn-warning btn-sm" style="margin-right: 10px; color:#ffff; ">Kembali</a>
+                            <a href="<?= base_url("admin/ocr") ?>" type="button" class="btn btn-warning btn-sm" style="margin-right: 10px; color:#ffff; ">Kembali</a>
                             <button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary btn-sm">Simpan</button>
                         </div>
                     </div>

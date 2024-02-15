@@ -123,10 +123,12 @@ h6 {
   transition: .5s;
 }
 
-.slider .list .item img {
+/* .slider .list .item img {
   width: 100%;
-  height: 100%;
-}
+  height: auto;
+  object-position: center;
+  object-fit: cover;
+} */
 
 .slider .list .item::after {
   content: '';
@@ -140,9 +142,9 @@ h6 {
 .slider .list .item .content {
   position: absolute;
   left: 10%;
-  top: 20%;
-  width: 500px;
-  max-width: 80%;
+  top: 15%;
+  width: 100%;
+  max-width: 90%;
   z-index: 1;
 }
 
@@ -152,15 +154,23 @@ h6 {
 }
 
 .slider .list .item .content h2 {
-  font-size: 80px;
-  color: #fff;
+  font-size: 40px;
+  color: #125D72;
   margin: 0;
 }
-
 
 .slider .list .item.active {
   opacity: 1;
   z-index: 10;
+}
+
+.home-content h3{
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.home-content h1{
+  font-size: 4rem;
 }
 
 @keyframes showContent {
@@ -215,7 +225,7 @@ h6 {
 
 .thumbnail {
   position: absolute;
-  bottom: 30px;
+  bottom: 0;
   z-index: 11;
   display: flex;
   gap: 10px;
@@ -226,6 +236,7 @@ h6 {
   box-sizing: border-box;
   overflow: auto;
   justify-content: center;
+  display: none;
 }
 
 .thumbnail::-webkit-scrollbar {
@@ -254,6 +265,26 @@ h6 {
 .thumbnail .item .content {
   position: absolute;
   inset: auto 10px 10px 10px;
+}
+
+.btn-light {
+  background-color: #1a94aa;
+  color: #fff;
+}
+
+.btn-light:hover {
+  color: #fff;
+  background-color: #125d72;
+  top: -5px;
+}
+
+.btn-light:focus {
+  background-color: #1a94aa;
+}
+
+.hero-title {
+  font-size: 45px;
+  line-height: 51px;
 }
 
 @media screen and (max-width: 678px) {

@@ -16,8 +16,6 @@ use App\Controllers\RelayController;
 
 // Landingpage
 $routes->get('/up2d', 'Home::index');
-$routes->get('/nonup2d/profile', 'Home::tim');
-$routes->get('/nonup2d/tim', 'Home::organisasi');
 
 //DATA UP
 $routes->get('/admin/up', 'UpController::index');

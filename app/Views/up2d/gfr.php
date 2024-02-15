@@ -89,35 +89,47 @@
             <div class="container p-3 my-5">
                 <!-- DataTable Code starts -->
                 <div class="text-right">
-                    <a href="<?= base_url("admin/tambah penyulang") ?>" class="btn btn-req border-dark" style="margin-bottom: 20px;">Tambah Data</a>
+                    <a href="<?= base_url("/admin/tambah gfr") ?>" class="btn btn-req border-dark" style="margin-bottom: 20px;">Tambah Data</a>
                 </div>
                 <table id="example" class="table" style="width:100%; margin-top: 20px;">
                     <thead>
                         <tr>
                             <th class="table-info">No</th>
-                            <th class="table-info">Gardu Induk (GI)</th>
-                            <th class="table-info">Penyulang Lama</th>
-                            <th class="table-info">Penyulang Baru</th>
-                            <th class="table-info">Kapasitas Trafo</th>
+                            <th class="table-info">Nama Pemutus</th>
+                            <th class="table-info">Arus 1</th>
+                            <th class="table-info">TMS</th>
+                            <th class="table-info">Curva 1</th>
+                            <th class="table-info">Arus 2</th>
+                            <th class="table-info">TD</th>
+                            <th class="table-info">Curva 2</th> 
+                            <th class="table-info">Arus 3</th>
+                            <th class="table-info">Delay</th>
+                            <th class="table-info">Curva 3</th>
                             <th class="table-info">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         $i = 1;
-                        foreach ($penyulang as $penyulang) {
+                        foreach ($gfr as $row) {
                         ?>
                             <tr>
                                 <td><?= $i++ ?></td>
-                                <td><?= $penyulang['nama_gardu_induk'] ?></td>
-                                <td><?= $penyulang['nama_penyulang_lama'] ?></td>
-                                <td><?= $penyulang['nama_penyulang_baru'] ?></td>
-                                <td><?= $penyulang['kapasitas_trafo'] ?></td>
+                                <td><?= $row['nama_keypoint'] ?></td>
+                                <td><?= $row['gfr_arus_1'] ?></td>
+                                <td><?= $row['gfr_tms'] ?></td>
+                                <td><?= $row['gfr_curva_1'] ?></td>
+                                <td><?= $row['gfr_arus_2'] ?></td>
+                                <td><?= $row['gfr_td'] ?></td>
+                                <td><?= $row['gfr_curva_2'] ?></td>
+                                <td><?= $row['gfr_arus_3'] ?></td>
+                                <td><?= $row['gfr_delay'] ?></td>
+                                <td><?= $row['gfr_curva_3'] ?></td>
                                 <td class="d-flex justify-content">
-                                    <a href="<?= base_url('admin/penyulang/' . $penyulang['id_penyulang'] . '/edit') ?>" type="button" class="btn btn-warning btn-sm mr-2" style="margin-right: 10px; color:#ffff; ">
+                                    <a href="<?= base_url('admin/gfr/' . $row['id_gfr'] . '/edit') ?>" type="button" class="btn btn-warning btn-sm mr-2" style="margin-right: 10px; color:#ffff; ">
                                         Ubah
                                     </a>
-                                    <form action="<?= base_url('admin/penyulang/' . $penyulang['id_penyulang']) ?>" method="POST">
+                                    <form action="<?= base_url('admin/gfr/' . $row['id_gfr']) ?>" method="POST">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <?= csrf_field() ?>
                                         <button type="submit" class="btn btn-danger btn-sm btn-hapus">Hapus</button>
@@ -167,6 +179,7 @@
     <!-- Template Main JS File -->
     <script src="<?= base_url("assets/js/main.js") ?>"></script>
     <script src="<?= base_url("assets/js/script.js") ?>"></script>
+    <script src="<?= base_url("assets/js/accordion.js") ?>"></script>
 </body>
 
 </html>

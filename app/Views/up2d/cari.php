@@ -30,8 +30,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0-alpha3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.1/css/responsive.bootstrap5.min.css">
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <link href="<?= base_url("assets/vendor/sweetalert/sweetalert2.css") ?>" rel="stylesheet">
     <link href="<?= base_url("assets/css/data_up1.css") ?>" rel="stylesheet">
     <link href="<?= base_url("assets/css/data_up2.css") ?>" rel="stylesheet">
 
@@ -83,52 +81,22 @@
 
 
     <main id="main">
-        <div class="swal" data-swal="<?= session()->get('message'); ?>"></div>
+
         <!-- ======= Why Us Section ======= -->
-        <section id="unit" class="unit section-bg"><br>
-            <div class="container p-3 my-5">
-                <!-- DataTable Code starts -->
-                <div class="text-right">
-                    <a href="<?= base_url("admin/tambah penyulang") ?>" class="btn btn-req border-dark" style="margin-bottom: 20px;">Tambah Data</a>
-                </div>
-                <table id="example" class="table" style="width:100%; margin-top: 20px;">
-                    <thead>
-                        <tr>
-                            <th class="table-info">No</th>
-                            <th class="table-info">Gardu Induk (GI)</th>
-                            <th class="table-info">Penyulang Lama</th>
-                            <th class="table-info">Penyulang Baru</th>
-                            <th class="table-info">Kapasitas Trafo</th>
-                            <th class="table-info">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $i = 1;
-                        foreach ($penyulang as $penyulang) {
-                        ?>
-                            <tr>
-                                <td><?= $i++ ?></td>
-                                <td><?= $penyulang['nama_gardu_induk'] ?></td>
-                                <td><?= $penyulang['nama_penyulang_lama'] ?></td>
-                                <td><?= $penyulang['nama_penyulang_baru'] ?></td>
-                                <td><?= $penyulang['kapasitas_trafo'] ?></td>
-                                <td class="d-flex justify-content">
-                                    <a href="<?= base_url('admin/penyulang/' . $penyulang['id_penyulang'] . '/edit') ?>" type="button" class="btn btn-warning btn-sm mr-2" style="margin-right: 10px; color:#ffff; ">
-                                        Ubah
-                                    </a>
-                                    <form action="<?= base_url('admin/penyulang/' . $penyulang['id_penyulang']) ?>" method="POST">
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <?= csrf_field() ?>
-                                        <button type="submit" class="btn btn-danger btn-sm btn-hapus">Hapus</button>
-                                    </form>
-                                </td>
-                            </tr>
-                        <?php
-                        }
-                        ?>
-                    </tbody>
-                </table>
+        <section id="tambah" class="tambah section-bg"><br>
+            <div class="mb-3">
+                <select class="form-select" aria-label="Default select example" name="" required>
+                    <option selected value="">Cari Penyulang</option>
+                    <?php
+                    foreach ($penyulang as $penyulang) {
+                    ?>
+                        <option value="<?= $penyulang['id_penyulang'] ?>">
+                            <?= $penyulang['nama_penyulang_lama'] ?>
+                        </option>
+                    <?php
+                    }
+                    ?>
+                </select>
             </div>
         </section>
         <!-- End Why Us Section -->
@@ -157,16 +125,10 @@
     <script src="<?= base_url("assets/vendor/php-email-form/validate.js") ?>"></script>
     <script src="<?= base_url("assets/vendor/sweetalert/sweetalert2.all.js") ?>"></script>
 
-    <!-- DataTable JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.4.1/js/responsive.bootstrap5.min.js"></script>
-
     <!-- Template Main JS File -->
     <script src="<?= base_url("assets/js/main.js") ?>"></script>
     <script src="<?= base_url("assets/js/script.js") ?>"></script>
+    <script src="<?= base_url("assets/js/tab.js") ?>"></script>
 </body>
 
 </html>

@@ -49,18 +49,19 @@
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top ">
         <div class="container d-flex align-items-center">
-
-            <h1 class="logo me-auto"><a href="#">UP2D</a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
+            <h1 class="logo me-auto">
+                <a href="#">
+                    <img src="<?= base_url("assets/images/logo_pln.png") ?>" alt="UP2D Logo" class="img-fluid">
+                    UP2D LAMPUNG
+                </a>
+            </h1>
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto" href="#">Cari</a></li>
                     <li class="dropdown"><a href="#"><span>Jenis Setting Proteksi</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="#">OCR</a></li>
-                            <li><a href="#">GFR</a></li>
+                            <li><a href="<?= base_url("/admin/ocr") ?>">OCR</a></li>
+                            <li><a href="<?= base_url("/admin/gfr") ?>">GFR</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a href=""><span>Data</span> <i class="bi bi-chevron-down"></i></a>
@@ -88,12 +89,11 @@
             <div class="container p-3 my-5">
                 <!-- DataTable Code starts -->
                 <div class="text-right">
-                    <a href="<?= base_url("#") ?>" class="btn btn-req border-dark" style="margin-bottom: 20px;">Tambah Data</a>
+                    <a href="<?= base_url("/admin/tambah relay") ?>" class="btn btn-req border-dark" style="margin-bottom: 20px;">Tambah Data</a>
                 </div>
                 <table id="example" class="table" style="width:100%; margin-top: 20px;">
                     <thead>
                         <tr>
-                            <th class="table-info"></th>
                             <th class="table-info">No</th>
                             <th class="table-info">Unit Layanan Pelanggan (ULP)</th>
                             <th class="table-info">Penyulang</th>
@@ -111,8 +111,7 @@
                         $i = 1;
                         foreach ($relay as $relay) {
                         ?>
-                            <tr data-bs-toggle="collapse" data-bs-target="#r1">
-                                <td scope="row"><i class="bi bi-chevron-down"></i></td>
+                            <tr>
                                 <td><?= $i++ ?></td>
                                 <td><?= $relay['nama_ulp'] ?></td>
                                 <td><?= $relay['nama_penyulang_lama'] ?></td>
@@ -123,21 +122,19 @@
                                 <td><?= $relay['rasio_ct_primer'] ?></td>
                                 <td><?= $relay['rasio_ct_sekunder'] ?></td>
                                 <td class="d-flex justify-content">
-                                    <a href="<?= base_url('#') ?>" type="button" class="btn btn-warning btn-sm mr-2" style="margin-right: 10px; color:#ffff; ">
+                                    <a href="<?= base_url('admin/relay/' . $relay['id_relay']) ?>" type="button" class="btn btn-success btn-sm mr-2" style="margin-right: 10px; color:#ffff; ">
+                                        Lihat
+                                    </a>
+                                    <a href="<?= base_url('admin/relay/' . $relay['id_relay'] . '/edit') ?>" type="button" class="btn btn-warning btn-sm mr-2" style="margin-right: 10px; color:#ffff; ">
                                         Ubah
                                     </a>
-                                    <form action="<?= base_url('#') ?>" method="POST">
+                                    <form action="<?= base_url('admin/relay/' . $relay['id_relay']) ?>" method="POST">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <?= csrf_field() ?>
                                         <button type="submit" class="btn btn-danger btn-sm btn-hapus">Hapus</button>
                                     </form>
                                 </td>
-                                <!-- <tr class="collapse accordion-collapse" id="r1" data-bs-parent=".table">
-                                    <td colspan="5"> Item 1 detail .. This is the first item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow. </td>
-                                </tr> -->
                             </tr>
-
-                            
                         <?php
                         }
                         ?>
@@ -181,6 +178,7 @@
     <!-- Template Main JS File -->
     <script src="<?= base_url("assets/js/main.js") ?>"></script>
     <script src="<?= base_url("assets/js/script.js") ?>"></script>
+    <script src="<?= base_url("assets/js/accordion.js") ?>"></script>
 </body>
 
 </html>

@@ -4,44 +4,40 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class RelayModel extends Model
+class OcrModel extends Model
 {
-    protected $table            = 'data_relay_proteksi';
-    protected $primaryKey       = 'id_relay';
+    protected $table            = 'data_ocr';
+    protected $primaryKey       = 'id_ocr';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_ulp', 'id_penyulang', 'nama_relay', 'status_relay', 'urutan_keypoint', 'nama_keypoint', 'merk_relay', 'type_relay', 'seri_relay', 'tahun_relay', 'umur_relay', 'com_relay', 'rasio_ct_primer', 'rasio_ct_sekunder'];
+    protected $allowedFields    = ['id_relay', 'ocr_arus_1', 'ocr_tms', 'ocr_curva_1', 'ocr_arus_2', 'ocr_td', 'ocr_curva_2', 'ocr_arus_3', 'ocr_delay', 'ocr_curva_3'];
 
-    public function getRelay($id = null)
+    public function getOCR($id = null)
     {
         if ($id != null) {
-            return $this->select('data_relay_proteksi.*, data_ulp.nama_ulp, data_penyulang.nama_penyulang_lama')
-                ->join('data_ulp', 'data_ulp.id_ulp = data_relay_proteksi.id_ulp')
-                ->join('data_penyulang', 'data_penyulang.id_penyulang = data_relay_proteksi.id_penyulang')
+            return $this->select('data_ocr.*, data_relay_proteksi.nama_keypoint')
+                ->join('data_relay_proteksi', 'data_relay_proteksi.id_relay = data_ocr.id_relay')
                 ->find($id);
         }
 
-        return $this->select('data_relay_proteksi.*, data_ulp.nama_ulp, data_penyulang.nama_penyulang_lama')
-            ->join('data_ulp', 'data_ulp.id_ulp = data_relay_proteksi.id_ulp')
-            ->join('data_penyulang', 'data_penyulang.id_penyulang = data_relay_proteksi.id_penyulang')
+        return $this->select('data_ocr.*, data_relay_proteksi.nama_keypoint')
+            ->join('data_relay_proteksi', 'data_relay_proteksi.id_relay = data_ocr.id_relay')
             ->findAll();
     }
 
-    public function saveRelay ($data){
+    public function saveOCR($data){
         return $this->insert($data);
     }
 
-    public function updateRelay($data, $id){
+    public function updateOCR($data, $id){
         return $this->update($id, $data); 
     }
 
-    public function deleteRelay($id){
+    public function deleteOCR($id){
         return $this->delete($id);
     }
-
-
 
     // // Dates
     // protected $useTimestamps = false;

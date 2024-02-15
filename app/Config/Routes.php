@@ -17,6 +17,7 @@ $routes->get('/nonup2d/profile', 'Home::tim');
 $routes->get('/nonup2d/tim', 'Home::organisasi');
 
 
+
 //DATA UP
 $routes->get('/admin/up', 'UpController::index');
 $routes->get('/admin/tambah up', 'UpController::tambah_up');

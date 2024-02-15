@@ -70,23 +70,54 @@
                 <!-- list Items -->
                 <div class="list">
                     <div class="item active">
-                        <img src="<?= base_url("/assets/images/img1.jpg") ?>">
                         <div class="content">
-                            <p>design</p>
-                            <h2>UP2D</h2>
-                            <p>
-                                EMANG BISA GANTI
-                            </p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="hero-title fw-bold mt-5">
+                                        Solusi Energi yang Handal dan Berkelanjutan!
+                                    </div>
+                                    <p class="mt-3 text-secondary">
+                                        PT PLN UP2D Lampung hadir untuk memastikan pasokan energi yang stabil dan andal untuk memenuhi kebutuhan masyarakat dan industri.
+                                    </p>
+                                    <div class="mt-5 d-flex gap-5">
+                                        <div class="col-2">
+                                            <h2>3</h2>
+                                            <p class="text-secondary">UP3</p>
+                                        </div>
+                                        <div class="col-2">
+                                            <h2>20+</h2>
+                                            <p class="text-secondary">ULP</p>
+                                        </div>
+                                        <div class="col-2">
+                                            <h2>200+</h2>
+                                            <p class="text-secondary">Penyulang</p>
+                                        </div>
+                                    </div>
+                                    <div class="cta mt-5 d-flex">
+                                        <a href="#cari" class="btn btn-light shadow-none me-4">Cari Penyulang</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="<?= base_url("assets/images/kegiatan.png") ?>" alt="pln" class="hero-img w-100">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="image/img2.jpg">
                         <div class="content">
-                            <p>design</p>
-                            <h2>Slider 02</h2>
-                            <p>
-                                BISA GA YA
-                            </p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mt-5 hero-title fw-bold">
+                                        Solusi Energi yang Handal dan Berkelanjutan!
+                                    </div>
+                                    <p class="mt-5 text-secondary">
+                                        PT PLN UP2D Lampung hadir untuk memastikan pasokan energi yang stabil dan andal untuk memenuhi kebutuhan masyarakat dan industri.
+                                    </p>
+                                </div>
+                                <div class="col-md-5 mt-5">
+                                    <img src="<?= base_url("assets/images/slider (4).png") ?>" alt="pln" class="hero-img w-100">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="item">
@@ -100,36 +131,13 @@
                             </p>
                         </div>
                     </div>
-                    <div class="item">
-                        <img src="image/img4.jpg">
-                        <div class="content">
-                            <p>design</p>
-                            <h2>Slider 04</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="image/img5.jpg">
-                        <div class="content">
-                            <p>design</p>
-                            <h2>Slider 05</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                button arrows
-                <div class="arrows">
-                    <button id="prev">
-                        << /button>
-                            <button id="next">></button>
-                </div>
 
+                </div>
+                <!-- button arrows -->
+                <div class="arrows">
+                    <button id="prev"></button>
+                    <button id="next"></button>
+                </div>
                 <!-- thumbnail -->
                 <div class="thumbnail">
                     <div class="item active">
@@ -150,18 +158,6 @@
                             Name Slider
                         </div>
                     </div>
-                    <div class="item">
-                        <img src="image/img4.jpg">
-                        <div class="content">
-                            Name Slider
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="image/img5.jpg">
-                        <div class="content">
-                            Name Slider
-                        </div>
-                    </div>
                 </div>
             </div>
     </section>
@@ -175,25 +171,12 @@
                         <div class="section-title">
                             <h2>Cari Penyulang</h2>
                         </div>
-                        <!-- <div class="footer-newsletter">
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-6">
-                                        <h4>Join Our Newsletter</h4> -->
-                        <!-- <p>Cari Penyulang disini</p>
-                                        <form action="" method="post">
-                                            <input type="email" name="email"><input type="submit" value="Subscribe">
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
         </section><!-- End Skills Section -->
         <!-- ======= Profil Section ======= -->
         <section id="team" class="Profile">
             <div class="container" data-aos="fade-up">
                 <div class="main">
-                    <img src="<?= base_url("assets\images\about.png") ?>" alt="pln">
+                    <img src="<?= base_url("assets\images\About.png") ?>" alt="pln">
                     <div class="all-text">
                         <h4>Tentang Kami</h4>
                         <h1>PT PLN <span>UP2D</span> Lampung</h1>
@@ -205,7 +188,7 @@
                             <a href="<?= base_url("/nonup2d/tim") ?>">
                                 <button type="button">Tim Kami</button>
                             </a>
-                            <a href="<?= base_url("/nonup2d/profil") ?>">
+                            <a href="<?= base_url("/nonup2d/profile") ?>">
                                 <button type="button" class="btn2">Selengkapnya</button>
                             </a>
                         </div>

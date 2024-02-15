@@ -54,11 +54,11 @@
             </h1>
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto" href="<?= base_url("/UP2D Lampung#carosuel") ?>">Beranda</a></li>
-                    <li><a class="nav-link scrollto" href="<?= base_url("/UP2D Lampung#carosuel") ?>">Cari</a></li>
-                    <li><a class="nav-link scrollto" href="<?= base_url("/UP2D Lampung#team") ?>">Tentang Kami</a></li>
-                    <li><a class="nav-link scrollto" href="<?= base_url("/UP2D Lampung#why-us") ?>">Pertanyaan</a></li>
-                    <li><a class="getstarted scrollto" href="<?= base_url("/UP2D Lampung#carosuel") ?>">Masuk</a></li>
+                    <li><a class="nav-link scrollto" href="<?= base_url("/up2d#carosuel") ?>">Beranda</a></li>
+                    <li><a class="nav-link scrollto" href="<?= base_url("/up2d#carosuel") ?>">Cari</a></li>
+                    <li><a class="nav-link scrollto" href="<?= base_url("/up2d#team") ?>">Tentang Kami</a></li>
+                    <li><a class="nav-link scrollto" href="<?= base_url("/up2d#why-us") ?>">Pertanyaan</a></li>
+                    <li><a class="getstarted scrollto" href="<?= base_url("/up2d#carosuel") ?>">Masuk</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
@@ -71,18 +71,18 @@
     <!-- side bar -->
     <ul class="sidebar">
         <li class="nav-item">
-            <a href="<?= base_url("/nonup2d/profile") ?>" class="nav-link">
+            <a href="" class="nav-link">
                 <i class="fas fa-building"></i>
                 <span class="judul">Profil</span>
             </a>
         </li>
         <li class="nav-item">
-            <a href="<?= base_url("/nonup2d/tim") ?>" class="nav-link">
+            <a href="<?= base_url("/nonup2d/organisasi") ?>" class="nav-link">
                 <i class="fas fa-solid fa-sitemap"></i>
                 <span class="judul">Tim</span>
         </li>
         <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="<?= base_url("/nonup2d/kegiatan") ?>" class="nav-link">
                 <i class="fas fa-solid fa-camera-retro"></i>
                 <span class="judul">Kegiatan</span>
             </a>

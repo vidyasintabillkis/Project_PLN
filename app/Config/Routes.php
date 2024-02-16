@@ -19,8 +19,8 @@ $routes->get('/', 'Home::index');
 $routes->get('/login', 'Home::login');
 $routes->get('/logout', 'Home::processLogout');
 $routes->post('/login/gate', 'Home::processLogin'); 
-$routes->get('/nonup2d/tim', 'Home::tim');
-$routes->get('/nonup2d/profile', 'Home::organisasi');
+$routes->get('/nonup2d/tim', 'Home::profile');
+$routes->get('/nonup2d/profile', 'Home::tim');
 
 //DATA UP
 $routes->get('/admin/up', 'UpController::index');

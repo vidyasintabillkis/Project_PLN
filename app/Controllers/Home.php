@@ -30,7 +30,56 @@ class Home extends BaseController
         return view('nonup2d/organisasi');
     }
 
-    public function cari(){
+    public function login(): string
+    {
+        return view('up2d/login');
+    }
+
+    // public function processLogin()
+    // {
+    //     $username = $this->request->getPost('username');
+    //     $password = $this->request->getPost('password');
+    //     if ($username === 'admin' && $password === 'Apdlampung123') {
+    //         session()->set('Login', true);
+    //         return redirect()->to('/admin/cari');
+    //     } else {
+    //         return redirect()->to('/login')->with('error', 'Username or password is incorrect');
+    //     }
+    // }
+
+    public function processLogin()
+    {
+        $session = \Config\Services::session();
+
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
+
+        $user = 'admin';
+        $pass = 'admin';
+
+        if (($user == $email) && ($pass == $password)) {
+            $data = [
+                'auth' => 1,
+                'email' => $email
+            ];
+            $session->set($data);
+            return redirect()->to('/admin/cari');
+        } else {
+            return redirect()->to('/login')->with('error', 'Username or password is incorrect');
+        }
+        // return view('welcome_message'); 
+    }
+
+    public function processLogout()
+    {
+        $session = \Config\Services::session();
+        $session->destroy();
+        return redirect()->to('/');
+    }
+
+
+    public function cari()
+    {
 
         $data = [
             'title' => 'Caru Grafik Setting Proteksi',

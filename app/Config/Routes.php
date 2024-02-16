@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\AjaxController;
 use App\Controllers\GfrController;
 use CodeIgniter\Router\RouteCollection;
 use App\Controllers\UpController;
@@ -81,3 +82,6 @@ $routes->delete('admin/gfr/(:any)', [GfrController::class, 'hapus']);
 
 //CARI
 $routes->get('/admin/cari', 'Home::cari');
+$routes->post('/admin/cari', 'CariController::cari');
+$routes->post('ajax/fetch-data/?(:any)', [AjaxController::class,'fetchData']);
+$routes->get('ajax/fetch-data/?(:any)', [AjaxController::class,'fetchData']);

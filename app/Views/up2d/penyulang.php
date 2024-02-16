@@ -57,7 +57,7 @@
             </h1>
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto" href="#">Cari</a></li>
+                    <li><a class="nav-link scrollto" href="<?= base_url("/admin/cari") ?>">Cari</a></li>
                     <li class="dropdown"><a href="#"><span>Jenis Setting Proteksi</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="<?= base_url("/admin/ocr") ?>">OCR</a></li>
@@ -73,7 +73,7 @@
                             <li><a href="<?= base_url("/admin/relay") ?>">Data Relay</a></li>
                         </ul>
                     </li>
-                    <li><a class="getstarted scrollto" href="#about">Keluar</a></li>
+                    <li><a class="getstarted scrollto" href="<?= base_url("/logout")?>">Keluar</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->

@@ -32,7 +32,8 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.1/css/responsive.bootstrap5.min.css">
     <link href="<?= base_url("assets/css/data_up1.css") ?>" rel="stylesheet">
     <link href="<?= base_url("assets/css/data_up2.css") ?>" rel="stylesheet">
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- =======================================================
   * Template Name: Arsha
   * Updated: Sep 18 2023 with Bootstrap v5.3.2
@@ -55,7 +56,7 @@
             </h1>
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto" href="#">Cari</a></li>
+                    <li><a class="nav-link scrollto" href="<?= base_url("/admin/cari") ?>">Cari</a></li>
                     <li class="dropdown"><a href="#"><span>Jenis Setting Proteksi</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="<?= base_url("/admin/ocr") ?>">OCR</a></li>
@@ -84,20 +85,174 @@
 
         <!-- ======= Why Us Section ======= -->
         <section id="tambah" class="tambah section-bg"><br>
-            <div class="mb-3">
-                <select class="form-select" aria-label="Default select example" name="" required>
-                    <option selected value="">Cari Penyulang</option>
-                    <?php
-                    foreach ($penyulang as $penyulang) {
-                    ?>
-                        <option value="<?= $penyulang['id_penyulang'] ?>">
-                            <?= $penyulang['nama_penyulang_lama'] ?>
-                        </option>
-                    <?php
-                    }
-                    ?>
-                </select>
+            <form method="post">
+                <div class="mb-3">
+                    <select class="form-select" aria-label="Default select example" name="keyword" id="cariSelect" required>
+                        <option selected value="" >Cari Penyulang</option>
+                        <?php
+                        foreach ($penyulang as $penyulang) {
+                        ?>
+                            <option value="<?= $penyulang['nama_penyulang_lama'] ?>">
+                                <?= $penyulang['nama_penyulang_lama'] ?>
+                            </option>
+                        <?php
+                        }
+                        ?>
+                    </select>
+                </div>
+
+               
+            </form>
+
+            <div class="my-3" >
+                    <table id="table-result" class="table table-striped" style="display: table-row;">
+                        <thead id="thead-result" class="thead-primary " >
+                        <tr>
+                            <th scope="col">DEFAULT</th>
+                            
+                        </tr>
+                        </thead>
+                        <tbody id="tbody-result">
+                                
+                        
+                        </tbody>
+                        </table>
             </div>
+
+            <div style="width:100%">
+                 <canvas id="scatter-chart"></canvas>
+            </div>
+
+  
+
+    <script>
+        $('#cariSelect').change(function() {
+            let keyword = $(this).val(); // Retrieve the selected value
+            $.ajax({
+                url: "<?php echo base_url('ajax/fetch-data/'); ?>" + keyword,
+                type: 'POST',
+                dataType: 'json',
+                success: function(data) {
+                   
+                    updateTable(data.dataTable);
+                    updateScatterChart(data.datasets);
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText);
+                }
+            });
+        });
+
+        
+
+        function updateScatterChart(datasets) {
+            var ctx = document.getElementById('scatter-chart').getContext('2d');
+            var scatterChart = new Chart(ctx, {
+                type: 'scatter',
+                data: {
+                    datasets: datasets.map(function(dataset) {
+                        console.log(dataset.label);
+                        return {
+                            label: dataset.label,
+                            data: dataset.data,
+                            borderColor: null, 
+                            backgroundColor: null,
+                            showLine: true,
+                            lineTension: 0
+                        };
+                    })
+                },
+                options: {
+                    plugins: {
+                        colors: {
+                        forceOverride: true
+                        },
+                        colorschemes: {
+                            scheme: 'tableau.Tableau20'
+                        },
+                        legend: {
+                            display: true,
+                            position: 'right',
+                            align: 'start', // Align the legend items to the start of each column
+                            labels: {
+                                usePointStyle: true // Use point style for legend items
+                            },
+                            layout: {
+                                padding: 20, // Padding between legend items
+                                columns: 2 // Number of columns in the legend
+                            }
+                },
+                    },
+                    scales: {
+                        x: {
+                            type: 'logarithmic',
+                            position: 'bottom',
+                            ticks: {
+                                callback: function(value, index, values) {
+                                    return value.toLocaleString('en-US', {minimumFractionDigits: 0});
+                                },
+                                min: 1,
+                                max: 10000,
+                                padding: 20
+                            }
+                        },
+                        y: {
+                            type: 'logarithmic',
+                            position: 'left',
+                            ticks: {
+                                callback: function(value, index, values) {
+                                    return value.toLocaleString('en-US', {minimumFractionDigits: 2});
+                                },
+                                min: 0.01,
+                                max: 1000,
+                                padding: 20
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+
+        function updateTable(dataTable) {
+            let tableHead = $('#thead-result')
+            var tableBody = $('#tbody-result');
+            tableBody.empty();
+            tableHead.empty();
+            let row = `<tr>`
+            for(let i = -2;i<dataTable.length-1;i++){
+                let cur = (i == -1) ? dataTable.length - 1 : i;
+                if(cur==-2){
+                    row += '<th scope="col">Uraian</th>';
+                    continue;
+                    
+                }
+                let smHeader = (i == -1)? "Penyulang" : "Pemutus "+(i+1);
+                row += '<th scope="col">' + dataTable[cur]['nama_keypoint'] +'<br><small>('+smHeader +')</small></th>';
+            }
+            row+='</tr>';
+            tableHead.append(row);
+            
+            rowName = ["type_relay","karakteristik","Rasio CT","ocr_arus_1","ocr_tms","ocr_arus_2","ocr_td"]
+            rowName2 = ["Merk/Type Rele","Karakteristik","Rasio CT","Setting 1> Amp","Setting t> tms","Setting I>> Amp","Setting t>> det"]
+            for (let i = 0; i < 7; i++) {
+                row = "<tr>";
+                row += '<td>' + rowName2[i] + '</td>';
+               
+                for (let j = - 1; j < dataTable.length-1; j++) {
+                    let cur = (j == -1) ? dataTable.length - 1 : j;
+                    if(i==1){
+                        row += '<td>Normal Inverse</td>';
+                        continue;
+                    }
+                    row += '<td>' + dataTable[cur][rowName[i]] + '</td>';
+                }
+
+                row += "</tr>";
+                tableBody.append(row);
+            }
+        }
+    </script>
         </section>
         <!-- End Why Us Section -->
     </main><!-- End #main -->

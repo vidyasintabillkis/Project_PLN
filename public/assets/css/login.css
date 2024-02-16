@@ -5,7 +5,7 @@
     font-family: 'Poppins', sans-serif;
 }
 .wrapper{
-    background: #47b2e4;
+    background: #1a94aa;
     padding: 0 20px 0 20px;
 }
 .main{
@@ -15,9 +15,10 @@
     min-height: 100vh;
 }
 .side-image{
-    background-image: url("/assets/images/tower_listrik_pln.jpg");
+    background-image: url("/assets/images/logopln.png");
     background-position: center;
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     border-radius: 10px 0 0 10px;
     position: relative;
@@ -98,10 +99,10 @@ img{
   {
    top: -10px;
    font-size: 13px;
-   color: #47b2e4;
+   color: #1a94aa;
  }
  .input-field .input:focus, .input-field .input:valid{
-    border-bottom: 1px solid #47b2e4;
+    border-bottom: 1px solid #1a94aa;
  }
  .submit{
     border: none;
@@ -112,7 +113,7 @@ img{
     transition: .4s;
  }
  .submit:hover{
-    background: #47b2e4;
+    background: #1a94aa;
     color: #fff;
  }
  .signin{

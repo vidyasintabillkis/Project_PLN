@@ -51,7 +51,7 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto" href="#carosuel">Beranda</a></li>
-                    <li><a class="nav-link scrollto" href="#about">Cari</a></li>
+                    <!-- <li><a class="nav-link scrollto" href="#about">Cari</a></li> -->
                     <li><a class="nav-link scrollto" href="#team">Tentang Kami</a></li>
                     <li><a class="nav-link scrollto" href="#why-us">Pertanyaan</a></li>
                     <li><a class="getstarted scrollto" href="<?= base_url("/login") ?>">Masuk</a></li>
@@ -108,27 +108,33 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mt-5 hero-title fw-bold">
-                                        Solusi Energi yang Handal dan Berkelanjutan!
+                                        Meraih keandalan dan efisiensi dalam distribusi listrik!
                                     </div>
                                     <p class="mt-5 text-secondary">
-                                        PT PLN UP2D Lampung hadir untuk memastikan pasokan energi yang stabil dan andal untuk memenuhi kebutuhan masyarakat dan industri.
+                                        Dengan infrastruktur yang canggih dan tim yang berpengalaman, kami memastikan bahwa listrik tersedia secara konsisten!
                                     </p>
                                 </div>
                                 <div class="col-md-5 mt-5">
-                                    <img src="<?= base_url("assets/images/slider (4).png") ?>" alt="pln" class="hero-img w-100">
+                                    <img src="<?= base_url("assets/images/slider (1).png") ?>" alt="pln" class="hero-img w-100">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="image/img3.jpg">
                         <div class="content">
-                            <p>design</p>
-                            <h2>Slider 03</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex.
-                            </p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mt-5 hero-title fw-bold">
+                                        Keamanan adalah prioritas utama kami dalam setiap aspek bisnis kami
+                                    </div>
+                                    <p class="mt-5 text-secondary">
+                                        PT PLN UP2D Lampung mengambil langkah-langkah proaktif untuk memastikan bahwa setiap aspek dari operasi kami memenuhi standar keamanan tertinggi
+                                    </p>
+                                </div>
+                                <div class="col-md-5 mt-5">
+                                    <img src="<?= base_url("assets/images/slider (2).png") ?>" alt="pln" class="hero-img w-100">
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -164,14 +170,14 @@
     <!-- End Hero -->
     <main id="main">
         <!-- ======= cari Section ======= -->
-        <section id="cari" class="Cari">
+        <!-- <section id="cari" class="Cari">
             <div class="container" data-aos="fade-up">
                 <div class="main">
                     <div class="container-fluid" data-aos="fade-up">
                         <div class="section-title">
                             <h2>Cari Penyulang</h2>
                         </div>
-        </section><!-- End Skills Section -->
+        </section>End Skills Section -->
         <!-- ======= Profil Section ======= -->
         <section id="team" class="Profile">
             <div class="container" data-aos="fade-up">

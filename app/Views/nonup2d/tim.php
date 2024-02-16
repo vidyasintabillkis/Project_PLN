@@ -55,7 +55,7 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto" href="<?= base_url("/ #carosuel") ?>">Beranda</a></li>
-                    <li><a class="nav-link scrollto" href="<?= base_url("/ #carosuel") ?>">Cari</a></li>
+                    <!-- <li><a class="nav-link scrollto" href="<?= base_url("/ #carosuel") ?>">Cari</a></li> -->
                     <li><a class="nav-link scrollto" href="<?= base_url("/ #team") ?>">Tentang Kami</a></li>
                     <li><a class="nav-link scrollto" href="<?= base_url("/ #why-us") ?>">Pertanyaan</a></li>
                     <li><a class="getstarted scrollto" href="<?= base_url("/login") ?>">Masuk</a></li>

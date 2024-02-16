@@ -20,12 +20,12 @@ class Home extends BaseController
         return view('nonup2d/landingpage');
     }
 
-    public function tim(): string
+    public function profile(): string
     {
         return view('nonup2d/tim');
     }
 
-    public function organisasi(): string
+    public function tim(): string
     {
         return view('nonup2d/organisasi');
     }

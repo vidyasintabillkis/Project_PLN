@@ -54,7 +54,7 @@
                     <li><a class="nav-link scrollto" href="#about">Cari</a></li>
                     <li><a class="nav-link scrollto" href="#team">Tentang Kami</a></li>
                     <li><a class="nav-link scrollto" href="#why-us">Pertanyaan</a></li>
-                    <li><a class="getstarted scrollto" href="#about">Masuk</a></li>
+                    <li><a class="getstarted scrollto" href="<?= base_url("/login") ?>">Masuk</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->

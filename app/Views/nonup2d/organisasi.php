@@ -54,11 +54,11 @@
             </h1>
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto" href="<?= base_url("/UP2D Lampung#carosuel") ?>">Beranda</a></li>
-                    <li><a class="nav-link scrollto" href="<?= base_url("/UP2D Lampung#carosuel") ?>">Cari</a></li>
-                    <li><a class="nav-link scrollto" href="<?= base_url("/UP2D Lampung#team") ?>">Tentang Kami</a></li>
-                    <li><a class="nav-link scrollto" href="<?= base_url("/UP2D Lampung#why-us") ?>">Pertanyaan</a></li>
-                    <li><a class="getstarted scrollto" href="<?= base_url("/UP2D Lampung#carosuel") ?>">Masuk</a></li>
+                    <li><a class="nav-link scrollto" href="<?= base_url("/ #carosuel") ?>">Beranda</a></li>
+                    <li><a class="nav-link scrollto" href="<?= base_url("/ #carosuel") ?>">Cari</a></li>
+                    <li><a class="nav-link scrollto" href="<?= base_url("/ #team") ?>">Tentang Kami</a></li>
+                    <li><a class="nav-link scrollto" href="<?= base_url("/ #why-us") ?>">Pertanyaan</a></li>
+                    <li><a class="getstarted scrollto" href="<?= base_url("/login") ?>">Masuk</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
@@ -81,12 +81,12 @@
                 <i class="fas fa-solid fa-sitemap"></i>
                 <span class="judul">Tim</span>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a href="" class="nav-link">
                 <i class="fas fa-solid fa-camera-retro"></i>
                 <span class="judul">Kegiatan</span>
             </a>
-        </li>
+        </li> -->
         <li class="nav-item">
             <a href="" class="nav-link">
                 <i class="fas fa-solid fa-bolt"></i>

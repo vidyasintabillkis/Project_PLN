@@ -71,7 +71,7 @@
                             <li><a href="<?= base_url("/admin/relay") ?>">Data Relay</a></li>
                         </ul>
                     </li>
-                    <li><a class="getstarted scrollto" href="#about">Keluar</a></li>
+                    <li><a class="getstarted scrollto" href="<?= base_url("/logout")?>">Keluar</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->

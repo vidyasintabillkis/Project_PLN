@@ -55,7 +55,7 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto" href="<?= base_url("/ #carosuel") ?>">Beranda</a></li>
-                    <!-- <li><a class="nav-link scrollto" href="<?= base_url("/ #carosuel") ?>">Cari</a></li> -->
+                    <li><a class="nav-link scrollto" href="<?= base_url("/ #cari") ?>">Cari</a></li>
                     <li><a class="nav-link scrollto" href="<?= base_url("/ #team") ?>">Tentang Kami</a></li>
                     <li><a class="nav-link scrollto" href="<?= base_url("/ #why-us") ?>">Pertanyaan</a></li>
                     <li><a class="getstarted scrollto" href="<?= base_url("/login") ?>">Masuk</a></li>
@@ -81,14 +81,8 @@
                 <i class="fas fa-solid fa-sitemap"></i>
                 <span class="judul">Tim</span>
         </li>
-        <!-- <li class="nav-item">
-            <a href="" class="nav-link">
-                <i class="fas fa-solid fa-camera-retro"></i>
-                <span class="judul">Kegiatan</span>
-            </a>
-        </li> -->
         <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="<?= base_url("/nonup2d/proteksi") ?>" class="nav-link">
                 <i class="fas fa-solid fa-bolt"></i>
                 <span class="judul">Proteksi</span>
             </a>
@@ -96,54 +90,86 @@
     </ul>
 
     <main id="main">
+        <!-- ======= Profil Section ======= -->
         <section id="team" class="Profile">
             <div class="container" data-aos="fade-up">
-                <div class="tree">
-                    <h2>Struktur Organisasi</h2>
-                    <p>Struktur organisasi PT PLN (Persero) UP2D Lampung berdasarkan <span>Peraturan Direksi PT
-                            PLN (Persero) nomor : 0115.P/DIR/2022 </span> tentang Organisasi dan Tata Kerja Unit
-                        Pelaksana pada PT PLN (Persero) Unit Induk Distribusi Lampung ditunjukkan pada
-                        gambar berikut di bawah ini :</p>
-                    <img src="<?= base_url("assets/images/Struktur Organisasi PLN.png") ?>" alt="struktur organisasi">
-                    <h2>Tugas Pokok</h2>
-                    <p>Berdasarkan Perdir diatas, UP2D dipimpin, dibina, dan dikelola oleh <span>MUP UP2D</span> yang
-                        bertanggung jawab kepada General Manager UID Lampung dalam merencanakan,
-                        mengelola kegiatan operasi sistem distribusi 20 kV, dan pemeliharaan kubikel 20 kV,
-                        keypoint, Supervisory Control and Data Acquisition (SCADA) dan telekomunikasi, dan
-                        pengadaan barang dan jasa secara efektif dan efisien berbasis aspek keselamatan,
-                        kesehatan kerja, lingkungan, dan keamanan sesuai dengan standar yang ditetapkan
-                        guna menjamin mutu dan keandalan sistem pendistribusian tenaga listrik untuk
-                        mencapai kinerja unit. <br><br>
-                        Adapun tugas-tugas pokok sebagai berikut :
-                        <li>
-                            <span>#1</span> Merencanakan dan menyusun program kerja UP2D sebagai pedoman kerja dan
-                            bahan untuk penyusunan RKA
-                        </li>
-                        <li>
-                            <span>#2</span> Menjamin pelaksanaan kegiatan operasi jaringan distribusi real time dalam rangka
-                            pencapaian target kinerja unit
-                        </li>
-                        <li>
-                            <span>#3</span> Menetapkan prosedur tetap pengamanan pendistribusian tenaga listrik untuk
-                            operasional harian dan acara khusus
-                        </li>
-                        <li>
-                            <span>#4</span> Mengendalikan dan mengevaluasi proses pengelolaan keuangan dan umum
-                        </li>
-                        <li>
-                            <span>#5</span> Memastikan perencanaan, pelaksanaan, dan evaluasi atas seluruh proses bisnis
-                        </li>
+                <div class="profil">
+                    <img src="<?= base_url("/assets/images/header.png") ?>">
+                    <h2>Profil Perusahaan</h2>
+                    <p>PT PLN (Persero) Unit Pelaksana Pengatur Distribusi Lampung, disingkat UP2D Lampung, adalah bagian integral dari Perusahaan Listrik Negara (PLN) yang bertanggung jawab untuk mengatur dan mendistribusikan pasokan listrik di wilayah Lampung. Sebagai objek vital nasional, UP2D Lampung memiliki peran krusial dalam memastikan ketersediaan energi listrik untuk mendukung berbagai sektor kehidupan masyarakat dan perkembangan ekonomi daerah. Informasi lebih lanjut akan membahas poin-poin kunci dalam sejarah UP2D Lampung, menyoroti tonggak-tonggak penting yang telah membentuk peran dan kontribusinya sebagai objek vital nasional.
                     </p>
+
+                    <h2>Sejarah Perusahaan</h2>
+                </div>
+                <!-- <div class="main"> -->
+                <div class="timeline-wrapper">
+                    <ul class="timeline">
+                        <li data-date="28/05/2001">
+                            <span class="poin">Pembentukan UB SB2JL</span>
+                            <div class="data">
+                                <h3>PT PLN UB SB2JL</h3>
+                                <small>28 Mei 2001</small>
+                                <p>
+                                    PT PLN (Persero) Wilayah IV menjadi PT PLN (Persero) Unit Bisnis Sumatera Selatan, Bengkulu, Bangka Belitung, Jambi, Lampung (UB SB2JL) melalui Keputusan Direksi PT PLN (Persero) Nomor. 114.K/010/DIR/2001 pada tanggal 28 Mei 2001.
+                                </p>
+                                <span class="close">tutup</span>
+                            </div>
+                        </li>
+                        <li data-date="25/06/2002">
+                            <span class="poin">PT PLN (Persero) Lampung</span>
+                            <div class="data">
+                                <h3>PT PLN Lampung</h3>
+                                <small>25 Juni 2002</small>
+                                <p>
+                                    Dalam perkembangannya PT PLN (Persero) Wilayah Usaha Lampung berubah nama menjadi PT PLN (Persero) Wilayah Lampung yang ditetapkan melalui Keputusan Direksi PT PLN (Persero) Nomor. 085.K/010/DIR/2002 tanggal 25 Juni 2002.
+                                </p>
+                                <span class="close">tutup</span>
+                            </div>
+                        </li>
+                        <li data-date="01/10/2015">
+                            <span class="poin">PT PLN APD Lampung</span>
+                            <div class="data">
+                                <h3>PT PLN APD Lampung</h3>
+                                <small>01 Oktober 2015</small>
+                                <p>
+                                    PT PLN (Persero) Area Pengatur Distribusi (APD) Lampung terbentuk berdasarkan SK DIR 0073.K/DIR/2015 tertanggal 1 Oktober 2015, yang mengatur organisasi Area Pengatur Distribusi Lampung di PT PLN (Persero) Distribusi Lampung.
+                                </p>
+                                <span class="close">tutup</span>
+                            </div>
+                        </li>
+                        <li data-date="01/08/2018">
+                            <span class="poin">PT PLN UP2D Lampung</span>
+                            <div class="data">
+                                <h3>PT PLN UP2D Lampung</h3>
+                                <small>1 Oktober 2018</small>
+                                <p>
+                                    Pada 1 Oktober 2018, PT PLN (Persero) APD Lampung mengalami perubahan menjadi PT PLN (Persero) UP2D Lampung. Saat ini PT PLN (Persero) UP2D Lampung mengelola 3 unit pelaksana, yaitu UP3 Tanjung Karang, Metro, dan Kotabumi.
+                                </p>
+                                <span class="close">tutup</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="profil">
+                    <h2>Visi</h2>
+                    <p>Menjadi Perusahaan Listrik Terkemuka se-Asia Tenggara dan #1 Pilihan Pelanggan untuk Solusi Energi.
+                    </p>
+                    <h2>Misi</h2>
+                    <p><span>#1</span> Menjalankan bisnis kelistrikan dan bidang lain yang terkait, berorientasi pada kepuasan pelanggan, anggota perusahaan dan pemegang saham</p>
+                    <p><span>#2</span> Menjadikan tenaga listrik sebagai media untuk meningkatkan kualitas kehidupan masyarakat</p>
+                    <p><span>#3</span> Mengupayakan agar tenaga listrik menjadi pendorong kegiatan ekonomi</p>
+                    <p><span>#4</span> Menjalankan kegiatan usaha yang berwawasan lingkungan</p>
                 </div>
             </div>
-        </section>
+            </div>
+        </section><!-- End Skills Section -->
     </main>
     <!-- ======= Footer ======= -->
     <footer id="footer">
         <div class="footer-top">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 footer-contact">
+                <div class="col-lg-3 col-md-6 footer-contact">
                         <h3 style="display: flex; align-items: center;">
                             <img src="<?= base_url("assets/images/logo_pln.png") ?>" alt="PLN UP2D Logo" style="max-width: 35px; margin-right: 10px;">
                             PLN UP2D
@@ -155,37 +181,35 @@
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>SubUnit UP2D Lampung</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">K3L</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Perencanaan</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Pemeliharaan</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Operasi Distribusi</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Fasilitas Operasi</a></li>
+                            <li><i class="bx bx-chevron-right"></i>K3L</li>
+                            <li><i class="bx bx-chevron-right"></i>Perencanaan</li>
+                            <li><i class="bx bx-chevron-right"></i>Pemeliharaan</li>
+                            <li><i class="bx bx-chevron-right"></i>Operasi Distribusi</li>
+                            <li><i class="bx bx-chevron-right"></i>Fasilitas Operasi</li>
+                            <li><i class="bx bx-chevron-right"></i>Keuangan dan Umum</li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Link Alternatif</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Beranda</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Cari</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Tentang Kami</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Pertanyaan</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url("/ #carosuel") ?>">Beranda</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url("/ #cari") ?>">Cari</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url("/ #team") ?> ">Tentang Kami</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url("/ ##why-us") ?>">Pertanyaan</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Kontak Kami</h4>
                         <div class="social-links mt-3">
-                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="https://youtube.com/@up2dlampung529?feature=shared" class="youtube"><i class="bx bxl-youtube"></i></a>
                             <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                            <a href="https://www.instagram.com/pln.up2dlampung?igsh=NjRvaHN2a2N0aWIz" class="instagram"><i class="bx bxl-instagram"></i></a>
                         </div><br>
                         <p><b>Telepon</b> : (0721) 773296</p>
                     </div>
-
                 </div>
             </div>
         </div>
-
         <div class="container footer-bottom clearfix">
             <div class="copyright">
                 &copy; Copyright 2024 <strong><span>PLN UP2D LAMPUNG</span></strong>. All Rights Reserved

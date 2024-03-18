@@ -51,17 +51,15 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto" href="#carosuel">Beranda</a></li>
-                    <!-- <li><a class="nav-link scrollto" href="#about">Cari</a></li> -->
+                    <li><a class="nav-link scrollto" href="#cari">Cari</a></li>
                     <li><a class="nav-link scrollto" href="#team">Tentang Kami</a></li>
                     <li><a class="nav-link scrollto" href="#why-us">Pertanyaan</a></li>
                     <li><a class="getstarted scrollto" href="<?= base_url("/login") ?>">Masuk</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
-
         </div>
     </header><!-- End Header -->
-
     <!-- ======= Carosuel Section ======= -->
     <section id="carosuel">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -113,6 +111,9 @@
                                     <p class="mt-5 text-secondary">
                                         Dengan infrastruktur yang canggih dan tim yang berpengalaman, kami memastikan bahwa listrik tersedia secara konsisten!
                                     </p>
+                                    <div class="cta mt-5 d-flex">
+                                        <a href="#cari" class="btn btn-light shadow-none me-4">Cari Penyulang</a>
+                                    </div>
                                 </div>
                                 <div class="col-md-5 mt-5">
                                     <img src="<?= base_url("assets/images/slider (1).png") ?>" alt="pln" class="hero-img w-100">
@@ -130,6 +131,9 @@
                                     <p class="mt-5 text-secondary">
                                         PT PLN UP2D Lampung mengambil langkah-langkah proaktif untuk memastikan bahwa setiap aspek dari operasi kami memenuhi standar keamanan tertinggi
                                     </p>
+                                    <div class="cta mt-5 d-flex">
+                                        <a href="#cari" class="btn btn-light shadow-none me-4">Cari Penyulang</a>
+                                    </div>
                                 </div>
                                 <div class="col-md-5 mt-5">
                                     <img src="<?= base_url("assets/images/slider (2).png") ?>" alt="pln" class="hero-img w-100">
@@ -137,7 +141,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <!-- button arrows -->
                 <div class="arrows">
@@ -155,13 +158,13 @@
                     <div class="item">
                         <img src="image/img2.jpg">
                         <div class="content">
-                            Name Slider
+                            UP2D LAMPUNG
                         </div>
                     </div>
                     <div class="item">
                         <img src="image/img3.jpg">
                         <div class="content">
-                            Name Slider
+                            UP2D LAMPUNG
                         </div>
                     </div>
                 </div>
@@ -170,14 +173,15 @@
     <!-- End Hero -->
     <main id="main">
         <!-- ======= cari Section ======= -->
-        <!-- <section id="cari" class="Cari">
+        <section id="cari" class="Cari">
             <div class="container" data-aos="fade-up">
                 <div class="main">
                     <div class="container-fluid" data-aos="fade-up">
                         <div class="section-title">
                             <h2>Cari Penyulang</h2>
                         </div>
-        </section>End Skills Section -->
+        </section>
+        <!-- End Skills Section -->
         <!-- ======= Profil Section ======= -->
         <section id="team" class="Profile">
             <div class="container" data-aos="fade-up">
@@ -210,14 +214,12 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
-
                         <div class="content">
                             <h3>Pertanyaan yang <strong>Sering Ditanyakan</strong> Terkait Setting Proteksi</h3>
                             <p>
                                 Berikut ini 3 pertanyaan umum yang sering ditanyakan mengenai setting proteksi antara lain:
                             </p>
                         </div>
-
                         <div class="accordion-list">
                             <ul>
                                 <li>
@@ -266,41 +268,38 @@
                         Bandar Lampung, 35144<br><br>
                         </p>
                     </div>
-
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>SubUnit UP2D Lampung</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">K3L</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Perencanaan</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Pemeliharaan</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Operasi Distribusi</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Fasilitas Operasi</a></li>
+                            <li><i class="bx bx-chevron-right"></i>K3L</li>
+                            <li><i class="bx bx-chevron-right"></i>Perencanaan</li>
+                            <li><i class="bx bx-chevron-right"></i>Pemeliharaan</li>
+                            <li><i class="bx bx-chevron-right"></i>Operasi Distribusi</li>
+                            <li><i class="bx bx-chevron-right"></i>Fasilitas Operasi</li>
+                            <li><i class="bx bx-chevron-right"></i>Keuangan dan Umum</li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Link Alternatif</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Beranda</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Cari</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Tentang Kami</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Pertanyaan</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#carosuel">Beranda</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#cari">Cari</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#team">Tentang Kami</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#why-us">Pertanyaan</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Kontak Kami</h4>
                         <div class="social-links mt-3">
-                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="https://youtube.com/@up2dlampung529?feature=shared" class="youtube"><i class="bx bxl-youtube"></i></a>
                             <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                            <a href="https://www.instagram.com/pln.up2dlampung?igsh=NjRvaHN2a2N0aWIz" class="instagram"><i class="bx bxl-instagram"></i></a>
                         </div><br>
                         <p><b>Telepon</b> : (0721) 773296</p>
                     </div>
-
                 </div>
             </div>
         </div>
-
         <div class="container footer-bottom clearfix">
             <div class="copyright">
                 &copy; Copyright 2024 <strong><span>PLN UP2D LAMPUNG</span></strong>. All Rights Reserved

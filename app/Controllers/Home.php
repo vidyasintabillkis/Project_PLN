@@ -22,12 +22,17 @@ class Home extends BaseController
 
     public function profile(): string
     {
-        return view('nonup2d/tim');
+        return view('nonup2d/profile');
     }
 
     public function tim(): string
     {
-        return view('nonup2d/organisasi');
+        return view('nonup2d/tim');
+    }
+
+    public function proteksi(): string
+    {
+        return view('nonup2d/proteksi');
     }
 
     public function login(): string

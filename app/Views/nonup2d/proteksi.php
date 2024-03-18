@@ -67,16 +67,17 @@
     </header>
     <!-- End Header -->
     <!-- ======= Header ======= -->
+
     <!-- side bar -->
     <ul class="sidebar">
         <li class="nav-item">
-            <a href="<?= base_url("/nonup2d/profile") ?>" class="nav-link">
+            <a href="<?= base_url("/nonup2d/tim") ?>" class="nav-link">
                 <i class="fas fa-building"></i>
                 <span class="judul">Profil</span>
             </a>
         </li>
         <li class="nav-item">
-            <a href="<?= base_url("/nonup2d/tim") ?>" class="nav-link">
+            <a href="<?= base_url("/nonup2d/profile") ?>" class="nav-link">
                 <i class="fas fa-solid fa-sitemap"></i>
                 <span class="judul">Tim</span>
         </li>
@@ -87,48 +88,89 @@
             </a>
         </li>
     </ul>
+
     <main id="main">
+        <!-- ======= Profil Section ======= -->
         <section id="team" class="Profile">
             <div class="container" data-aos="fade-up">
-                <div class="tree">
-                    <h2>Struktur Organisasi</h2>
-                    <p>Struktur organisasi PT PLN (Persero) UP2D Lampung berdasarkan <span>Peraturan Direksi PT
-                            PLN (Persero) nomor : 0115.P/DIR/2022 </span> tentang Organisasi dan Tata Kerja Unit
-                        Pelaksana pada PT PLN (Persero) Unit Induk Distribusi Lampung ditunjukkan pada
-                        gambar berikut di bawah ini :</p>
-                    <img src="<?= base_url("assets/images/Struktur Organisasi PLN.png") ?>" alt="struktur organisasi">
-                    <h2>Tugas Pokok</h2>
-                    <p>Berdasarkan Perdir diatas, UP2D dipimpin, dibina, dan dikelola oleh <span>MUP UP2D</span> yang
-                        bertanggung jawab kepada General Manager UID Lampung dalam merencanakan,
-                        mengelola kegiatan operasi sistem distribusi 20 kV, dan pemeliharaan kubikel 20 kV,
-                        keypoint, Supervisory Control and Data Acquisition (SCADA) dan telekomunikasi, dan
-                        pengadaan barang dan jasa secara efektif dan efisien berbasis aspek keselamatan,
-                        kesehatan kerja, lingkungan, dan keamanan sesuai dengan standar yang ditetapkan
-                        guna menjamin mutu dan keandalan sistem pendistribusian tenaga listrik untuk
-                        mencapai kinerja unit. <br><br>
-                        Adapun tugas-tugas pokok sebagai berikut :
-                        <li>
-                            <span>#1</span> Merencanakan dan menyusun program kerja UP2D sebagai pedoman kerja dan
-                            bahan untuk penyusunan RKA
-                        </li>
-                        <li>
-                            <span>#2</span> Menjamin pelaksanaan kegiatan operasi jaringan distribusi real time dalam rangka
-                            pencapaian target kinerja unit
-                        </li>
-                        <li>
-                            <span>#3</span> Menetapkan prosedur tetap pengamanan pendistribusian tenaga listrik untuk
-                            operasional harian dan acara khusus
-                        </li>
-                        <li>
-                            <span>#4</span> Mengendalikan dan mengevaluasi proses pengelolaan keuangan dan umum
-                        </li>
-                        <li>
-                            <span>#5</span> Memastikan perencanaan, pelaksanaan, dan evaluasi atas seluruh proses bisnis
-                        </li>
-                    </p>
+                <div class="profil">
+                    <div class="sec-title text-center mb-5">
+                        <p class="sec-sub-title mb-3 mt-5">Tentang</p>
+                        <h2 class="h2-title">Setting <span>Proteksi</span></h2>
+                        <!-- <div class="sec-title-shape mb-4">
+                            <img src="<?= base_url("assets/images/Setting Proteksi.png") ?>" alt="header">
+                        </div> -->
+                        <p>
+                            Setting proteksi dalam dunia listrik adalah pengaturan terhadap sistem pengaman yang digunakan untuk melindungi peralatan listrik dari gangguan. Gangguan yang dimaksud bisa berupa arus lebih, hubungan pendek ke tanah, ataupun kondisi abnormal lainnya pada sistem tenaga listrik.
+                        </p>
+                        <p>
+                            Komponen utama dari sistem proteksi ini biasanya berupa relai proteksi. Relai ini berfungsi untuk mendeteksi adanya gangguan pada listrik. Nantinya, setelah mendeteksi gangguan, relai akan memberikan sinyal untuk memutuskan aliran listrik pada bagian yang terganggu. Dengan memutuskan aliran listrik ini, diharapkan kerusakan yang lebih parah pada peralatan listrik dapat dicegah
+                        </p>
+                        <h2 class="h2-title">Fungsi <span>Setting Proteksi</span></h2>
+                        <div class="row">
+                            <div class="column">
+                                <div class="card">
+                                    <div class="icon-wrapper">
+                                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                                    </div>
+                                    <h3>Jenis Gangguan</h3>
+                                    <p>
+                                        Setting proteksi menentukan jenis gangguan yang akan dideteksi oleh sistem proteksi
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="card">
+                                    <div class="icon-wrapper">
+                                        <i class="fa-solid fa-business-time"></i>
+                                    </div>
+                                    <h3>Waktu Tunda Operasi</h3>
+                                    <p>
+                                        Setting Proteksi dapat menentukan waktu tunda operasi untuk bereaksi terhadap gangguan
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="card">
+                                    <div class="icon-wrapper">
+                                        <i class="fa-solid fa-bolt-lightning"></i>
+                                    </div>
+                                    <h3>Tingkat Sensitivitas</h3>
+                                    <p>
+                                        Setting proteksi juga menentukan tingkat sensitivitas sistem proteksi
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="card">
+                                    <div class="icon-wrapper">
+                                        <i class="fa-solid fa-user-shield"></i>
+                                    </div>
+                                    <h3>Tingkat Keamanan</h3>
+                                    <p>
+                                        Setting proteksi juga menentukan tingkat keamanan sistem proteksi
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="main"> -->
+                    <h2 class="h2-title">Relay <span>Proteksi</span></h2>
+                    <div class="col-lg-8">
+                        <div class="about-video">
+                            <div class="about-video-img" style="background-image: url(<?= base_url("/assets/images/Relay.png") ?>);">
+                            </div>
+                            <div class="play-btn-wp">
+                                <a href="https://youtu.be/hWq8dCfq8-s?si=ugU1BAg1hMKpN_Po" data-fancybox="video" class="play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </a>
+                                <span>Tonton di sini selengkapnya</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </section><!-- End Skills Section -->
     </main>
     <!-- ======= Footer ======= -->
     <footer id="footer">

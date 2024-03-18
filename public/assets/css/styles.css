@@ -907,8 +907,8 @@ section {
 #footer {
   font-size: 14px;
   background: #1a94aa;
-  /* position: absolute;
-  bottom: 0;
+  /* position: fixed;
+  /* bottom: 0;
   width: 100%; */
 }
 

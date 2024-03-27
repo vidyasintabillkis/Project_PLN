@@ -153,19 +153,36 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- <div class="main"> -->
-                    <h2 class="h2-title">Relay <span>Proteksi</span></h2>
-                    <div class="col-lg-8">
-                        <div class="about-video">
-                            <div class="about-video-img" style="background-image: url(<?= base_url("/assets/images/Relay.png") ?>);">
-                            </div>
-                            <div class="play-btn-wp">
-                                <a href="https://youtu.be/hWq8dCfq8-s?si=ugU1BAg1hMKpN_Po" data-fancybox="video" class="play-btn">
-                                    <i class="fa-solid fa-play"></i>
-                                </a>
-                                <span>Tonton di sini selengkapnya</span>
-                            </div>
+                        <h2 class="h2-title">Relay <span>Proteksi</span></h2>
+                        <p>
+                            Proteksi dasar merupakan sistem pengamanan yang digunakan untuk melindungi peralatan dan sistem kelistrikan dari kerusakan akibat gangguan. Gangguan tersebut dapat berupa:
+                        </p>
+                        <ul class="relay">
+                            <li>1. <span>Korsleting: </span>Arus listrik yang mengalir melalui jalur yang tidak normal.</li>
+                            <li>2. <span>Beban berlebih: </span> Arus listrik yang mengalir melebihi batas kemampuan peralatan.</li>
+                            <li>3. <span>Tegangan berlebih: </span>Tegangan listrik yang melebihi batas kemampuan peralatan.</li>
+                            <li>4. <span>Penurunan tegangan: </span>Tegangan listrik yang turun di bawah batas kemampuan peralatan.</li>
+                        </ul>
+                        <p>
+                            Sistem proteksi dasar umumnya terdiri dari:
+                        </p>
+                        <ul class="relay">
+                            <li>
+                                1. <span>Relai: </span> Alat yang mendeteksi gangguan dan memberikan sinyal kepada alat pemutus.
+                            </li>
+                            <li>
+                                2. <span>Alat pemutus: </span> Alat yang memutus aliran listrik saat terjadi gangguan.
+                            </li>
+                            <li>
+                                3. <span>Sekering: </span> Alat yang memutus aliran listrik saat terjadi arus berlebih.
+                            </li>
+                            <li>
+                                4. <span>Pemutus sirkuit (MCB): </span>Alat yang memutus aliran listrik saat terjadi korsleting atau beban berlebih.
+                            </li>
+                        </ul>
+                        <h4>Penjelasan mengenai berbagai relay lainnya dapat dilihat di video</h4>
+                        <div class="col-lg-8">
+                                    <iframe class="play-btn-wp" src="https://www.youtube.com/embed/FcePp1aKlPA?si=Z1a6zoXplmrSdtcp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
